@@ -1,0 +1,754 @@
+[
+ {
+  "id": "Qop0WqkTxto",
+  "slug": "rubik-gods-number",
+  "title": "Every Rubik's Cube Is 20 Moves From Solved",
+  "date": "2026-11-21T18:49:47Z",
+  "thumb": "/thumbs/rubik-gods-number.webp",
+  "blurb": "Every Rubik's Cube position can be solved in 20 moves or fewer, and that number is called God's number."
+ },
+ {
+  "id": "-2ig4rtrUjU",
+  "slug": "moon-closer",
+  "title": "What If The Moon Got Closer Every Day?",
+  "date": "2026-11-20T12:00:00Z",
+  "thumb": "/thumbs/moon-closer.webp",
+  "blurb": "We pushed the Moon closer to Earth step by step until it broke apart above one small harbor in Slovenia."
+ },
+ {
+  "id": "i9KkZ_61Y94",
+  "slug": "grabby-aliens",
+  "title": "Why We Can't See The Aliens Coming",
+  "date": "2026-11-19T12:00:00Z",
+  "thumb": "/thumbs/grabby-aliens.webp",
+  "blurb": "If grabby aliens are spreading at nearly light speed, our sky would look empty until they were almost here."
+ },
+ {
+  "id": "tfmItjpT3HA",
+  "slug": "parrondo",
+  "title": "Two Losing Games That Win",
+  "date": "2026-11-18T12:00:00Z",
+  "thumb": "/thumbs/parrondo.webp",
+  "blurb": "Parrondo's paradox: two coin games that each lose you money start to win when you switch between them."
+ },
+ {
+  "id": "bsGI3Q_bv38",
+  "slug": "evolved-star-system",
+  "title": "We Evolved The Perfect Star System For Earth",
+  "date": "2026-11-17T12:00:00Z",
+  "thumb": "/thumbs/evolved-star-system.webp",
+  "blurb": "We let evolution design the best home for Earth in a three-body problem, and it parked two extra suns right next door."
+ },
+ {
+  "id": "7TYbT_WJZWE",
+  "slug": "earth-three-suns",
+  "title": "We Put Earth In A Three-Star System",
+  "date": "2026-11-16T12:00:00Z",
+  "thumb": "/thumbs/earth-three-suns.webp",
+  "blurb": "We dropped 10,000 Earths into the three-body problem, three suns each, and followed their orbits and climate for 4.5 billion years."
+ },
+ {
+  "id": "0ABI-nBDq2Y",
+  "slug": "quantum-iceberg",
+  "title": "The Quantum Physics Iceberg, Visualized",
+  "date": "2026-11-14T15:49:13Z",
+  "thumb": "/thumbs/quantum-iceberg.webp",
+  "blurb": "We wrote our own quantum solver and drew the quantum physics iceberg one tier at a time, down to the tier nobody can picture yet."
+ },
+ {
+  "id": "HddkZyvhehc",
+  "slug": "three-body-5",
+  "title": "We Sent Two Suns Past A Black Hole",
+  "date": "2026-11-13T12:02:45Z",
+  "thumb": "/thumbs/three-body-5.webp",
+  "blurb": "We threw three stars at each other 400,000 times to see if one ever gets torn apart at the Roche limit."
+ },
+ {
+  "id": "jk6pElJ8fy4",
+  "slug": "planet-blackout",
+  "title": "We Hit Every Power Grid On Earth With A Solar Storm",
+  "date": "2026-11-12T12:03:04Z",
+  "thumb": "/thumbs/planet-blackout.webp",
+  "blurb": "We ran a Carrington event through a model of every power grid on Earth 5,000 times to see who loses power."
+ },
+ {
+  "id": "rPKYEwG_fLY",
+  "slug": "two-people",
+  "title": "We Let Two People Restart Humanity 10,000 Times",
+  "date": "2026-11-11T12:02:42Z",
+  "thumb": "/thumbs/two-people.webp",
+  "blurb": "Can two people repopulate the Earth? We built our own simulation that tracks every person's life and genes, and started 10,000 worlds from a single couple. Each starting pair is a healthy, unrelated woman and man, both twenty, and each world runs for fifty generations with room for about 5,000 people. Life expectancy at birth is 31 years, close to what's measured for hunter-gatherers, and everyone carries hidden broken genes, which the geneticist Hermann Muller wrote about in a 1950 paper called Our Load of Mutations."
+ },
+ {
+  "id": "hcbQfJbkjn0",
+  "slug": "thousand-stars",
+  "title": "We Let Go Of 1,000 Stars",
+  "date": "2026-11-10T12:00:00Z",
+  "thumb": "/thumbs/thousand-stars.webp",
+  "blurb": "Let go of a thousand stars gently and our star cluster simulation throws out more than thirty times as many as a fast release does."
+ },
+ {
+  "id": "IrUQDpv6xrY",
+  "slug": "voyager",
+  "title": "Voyager 1 Is About To Be One Light-Day Away",
+  "date": "2026-11-09T12:00:00Z",
+  "thumb": "/thumbs/voyager.webp",
+  "blurb": "On November 18, Voyager 1 becomes the first thing humans have ever built to reach one light-day from Earth."
+ },
+ {
+  "id": "Cfents4mNhs",
+  "slug": "earth-spin",
+  "title": "We Spun The Earth Until It Broke",
+  "date": "2026-11-07T12:00:00Z",
+  "thumb": "/thumbs/earth-spin.webp",
+  "blurb": "We simulated the Earth spinning faster, shortening its day with every turn until the planet broke apart."
+ },
+ {
+  "id": "uYlzRvhcwCY",
+  "slug": "three-body-4",
+  "title": "We Gave The Three-Body Problem A Spin",
+  "date": "2026-11-06T12:00:00Z",
+  "thumb": "/thumbs/three-body-4.webp",
+  "blurb": "Give the three-body problem one small spin, and a solid ring that passes the standard stability test for triple stars appears."
+ },
+ {
+  "id": "qerSAFWIyqU",
+  "slug": "mirrors",
+  "title": "We Flew 50,000 Space Mirrors Over One Solar Farm",
+  "date": "2026-11-05T12:00:00Z",
+  "thumb": "/thumbs/mirrors.webp",
+  "blurb": "Reflect Orbital wants to sell sunlight at night from 50,000 space mirrors, so we flew the whole fleet over one Mojave solar farm."
+ },
+ {
+  "id": "kAzdrvZiBzU",
+  "slug": "binance",
+  "title": "We Simulated The Binance Bank Run",
+  "date": "2026-11-04T12:00:00Z",
+  "thumb": "/thumbs/binance.webp",
+  "blurb": "The Binance hack moved most of $6.3 billion out in about twenty minutes on 29 October 2026, yet the bank run everyone expected never came."
+ },
+ {
+  "id": "6iSPU_aekcc",
+  "slug": "triple-pendulum",
+  "title": "We Added Arms To A Double Pendulum Until It Became A Rope",
+  "date": "2026-11-03T12:00:00Z",
+  "thumb": "/thumbs/triple-pendulum.webp",
+  "blurb": "We took a double pendulum and kept adding arms, all the way up to a hundred-link rope, to find out which one is hardest to predict."
+ },
+ {
+  "id": "42y-sQTPzrk",
+  "slug": "three-body-3",
+  "title": "We Added Relativity To The Three-Body Problem",
+  "date": "2026-11-02T12:00:00Z",
+  "thumb": "/thumbs/three-body-3.webp",
+  "blurb": "We added Einstein's relativity and real star sizes to the three-body problem, then reran our map of fates over 3.7 million times."
+ },
+ {
+  "id": "HIWqZh9JhzI",
+  "slug": "apophis",
+  "title": "We Threw A Million Apophises At Earth",
+  "date": "2026-11-01T12:00:00Z",
+  "thumb": "/thumbs/apophis.webp",
+  "blurb": "For a few days in December 2004, the odds that the Apophis asteroid would hit Earth in 2029 climbed to 1 in 37."
+ },
+ {
+  "id": "dIuOL7eYOmU",
+  "slug": "galaxy-crash",
+  "title": "We Crashed The Milky Way Into Andromeda. 14 Stars Touched.",
+  "date": "2026-10-30T22:19:42Z",
+  "thumb": "/thumbs/galaxy-crash.webp",
+  "blurb": "If the Milky Way Andromeda collision happens, a trillion stars pass through a few hundred billion more and almost none touch."
+ },
+ {
+  "id": "OQ92hkvfpaA",
+  "slug": "hilda-triangle",
+  "title": "There's A Triangle Around The Sun. Nothing Stands On It.",
+  "date": "2026-10-30T07:27:11Z",
+  "thumb": "/thumbs/hilda-triangle.webp",
+  "blurb": "The Hilda asteroids draw a triangle around the Sun, and not one of them stays put on it."
+ },
+ {
+  "id": "4hdhU_HWCt8",
+  "slug": "dice-jar",
+  "title": "We Packed 86,000 Shapes. Round Came Last.",
+  "date": "2026-10-28T14:45:16Z",
+  "thumb": "/thumbs/dice-jar.webp",
+  "blurb": "In random sphere packing, marbles leave more gaps than M&Ms, rice grains and almost every die, and in our own engine the ball came last."
+ },
+ {
+  "id": "gvSyJ3kQSHU",
+  "slug": "three-body-2",
+  "title": "We Threw Three Stars Together 5 Million Times",
+  "date": "2026-10-27T12:00:00Z",
+  "thumb": "/thumbs/three-body-2.webp",
+  "blurb": "Part two of our three-body problem video: we threw three stars together over five million times to answer four questions from your comments."
+ },
+ {
+  "id": "i9dKJewh-TQ",
+  "slug": "fold",
+  "title": "We Simulated A Million Folds Of The iPhone Duo",
+  "date": "2026-10-26T12:00:00Z",
+  "thumb": "/thumbs/fold.webp",
+  "blurb": "We folded 1,200 simulated screens a million times to find out how deep the iPhone Duo crease gets by year five."
+ },
+ {
+  "id": "3Xx3ZR91RvQ",
+  "slug": "krillion",
+  "title": "I Solved Krillion",
+  "date": "2026-10-25T12:00:00Z",
+  "thumb": "/thumbs/krillion.webp",
+  "blurb": "The Krillion game scores many answers by how often a name turns up in print, which means you can work out the best way to play it."
+ },
+ {
+  "id": "8mvsR3qwM5k",
+  "slug": "risk",
+  "title": "We Played 1.64 Billion Games Of Risk... This is What We Found",
+  "date": "2026-10-24T11:00:00Z",
+  "thumb": "/thumbs/risk.webp",
+  "blurb": "We worked out the exact Risk dice odds, then played 1.64 billion games of Risk to find out who really has the edge."
+ },
+ {
+  "id": "pTyqhhWw614",
+  "slug": "monopoly",
+  "title": "We Played 950 Million Games Of Monopoly... This is What We Found",
+  "date": "2026-10-23T11:00:00Z",
+  "thumb": "/thumbs/monopoly.webp",
+  "blurb": "The best Monopoly strategy comes down to where tokens land, and Jail makes them land unevenly."
+ },
+ {
+  "id": "UPei-p8hEDs",
+  "slug": "kirkwood-gaps",
+  "title": "Jupiter Emptied These Lanes Without Touching Them",
+  "date": "2026-10-22T11:00:00Z",
+  "thumb": "/thumbs/kirkwood-gaps.webp",
+  "blurb": "The Kirkwood gaps are nearly empty lanes in the asteroid belt, and Jupiter cleared them without ever coming close."
+ },
+ {
+  "id": "hdYIVom4al0",
+  "slug": "swapping-moons",
+  "title": "These Two Moons Swap Places Every Four Years",
+  "date": "2026-10-21T11:00:00Z",
+  "thumb": "/thumbs/swapping-moons.webp",
+  "blurb": "Janus and Epimetheus are two moons of Saturn that share one orbit, and every four years they swap places without ever colliding."
+ },
+ {
+  "id": "ulZ-rI-hqu0",
+  "slug": "upside-down-pendulum",
+  "title": "Nothing Is Balancing This Upside-Down Pendulum",
+  "date": "2026-10-20T11:00:00Z",
+  "thumb": "/thumbs/upside-down-pendulum.webp",
+  "blurb": "The Kapitza pendulum stands upside down and swings back to vertical when pushed, held there by nothing but a pivot shaking up and down."
+ },
+ {
+  "id": "cwPi4LYK628",
+  "slug": "unstir-dye",
+  "title": "You Can Un-Stir Syrup (But Not Your Coffee)",
+  "date": "2026-10-19T11:00:00Z",
+  "thumb": "/thumbs/unstir-dye.webp",
+  "blurb": "In the unmixing experiment, a drop of dye stirred into syrup until it vanishes reappears when you turn the handle back."
+ },
+ {
+  "id": "hApPEQy7Y5w",
+  "slug": "lakes-of-wada",
+  "title": "The Shoreline That Touches Three Lakes At Every Point",
+  "date": "2026-10-17T11:10:54Z",
+  "thumb": "/thumbs/lakes-of-wada.webp",
+  "blurb": "The Lakes of Wada are three lakes sharing one shoreline, so every point of the shore touches all three at once."
+ },
+ {
+  "id": "5whVJ03NISg",
+  "slug": "sphere-eversion",
+  "title": "How To Turn A Sphere Inside Out Without A Crease",
+  "date": "2026-10-16T12:07:27Z",
+  "thumb": "/thumbs/sphere-eversion.webp",
+  "blurb": "Sphere eversion turns a sphere inside out, letting it pass through itself but never cutting, tearing or creasing it anywhere."
+ },
+ {
+  "id": "TSqF49MfroQ",
+  "slug": "lorenz-butterfly",
+  "title": "Three Equations, Nothing Random, And It Never Repeats",
+  "date": "2026-10-15T11:34:14Z",
+  "thumb": "/thumbs/lorenz-butterfly.webp",
+  "blurb": "The Lorenz attractor comes from three short equations with nothing random in them, and the path they draw never repeats."
+ },
+ {
+  "id": "2naBAqRShCI",
+  "slug": "trojan-asteroids",
+  "title": "15,000 Asteroids Circle A Point With Nothing In It",
+  "date": "2026-10-14T10:27:51Z",
+  "thumb": "/thumbs/trojan-asteroids.webp",
+  "blurb": "More than 15,000 asteroids travel round the Sun with Jupiter, crowded round two of its Lagrange points, and there is nothing at either one."
+ },
+ {
+  "id": "aN592QhzJRM",
+  "slug": "four-d-solids",
+  "title": "Why Five Dimensions Have Fewer Perfect Shapes Than Four",
+  "date": "2026-10-13T12:12:51Z",
+  "thumb": "/thumbs/four-d-solids.webp",
+  "blurb": "There are five regular polytopes in three dimensions and six in four, but five dimensions have only three, and so does every dimension after it."
+ },
+ {
+  "id": "wAXPslTcnH8",
+  "slug": "kepler-oranges",
+  "title": "Stacking Oranges Took 400 Years And A Computer To Prove",
+  "date": "2026-10-12T11:39:15Z",
+  "thumb": "/thumbs/kepler-oranges.webp",
+  "blurb": "The Kepler conjecture says the grocer's pyramid of oranges is the tightest way to stack equal balls, and proving it took almost 400 years."
+ },
+ {
+  "id": "14ZXvLndOWY",
+  "slug": "einstein-hat",
+  "title": "The Tile That Can Never Repeat",
+  "date": "2026-10-12T07:07:48Z",
+  "thumb": "/thumbs/einstein-hat.webp",
+  "blurb": "The hat is an einstein tile: one plain shape that covers an infinite floor with no gaps, and the pattern never repeats."
+ },
+ {
+  "id": "sGWPKWoTMP8",
+  "slug": "busy-beaver",
+  "title": "The Tiny Program That Outruns The Universe",
+  "date": "2026-10-10T15:39:38Z",
+  "thumb": "/thumbs/busy-beaver.webp",
+  "blurb": "The busy beaver numbers grow so fast that a six-card program runs for more steps than the whole universe has room to write down."
+ },
+ {
+  "id": "MKWonPGZ6dc",
+  "slug": "fireflies",
+  "title": "Thousands Of Fireflies, One Beat, And No Leader",
+  "date": "2026-10-09T18:35:02Z",
+  "thumb": "/thumbs/fireflies.webp",
+  "blurb": "Firefly synchronization needs no leader, and here a thousand simulated fireflies flashing out of step fall onto one beat in under a minute."
+ },
+ {
+  "id": "ofi7ot4Lziw",
+  "slug": "three-body",
+  "title": "Three-Body Chaos Hides A Perfect Figure-Eight",
+  "date": "2026-10-08T18:20:51Z",
+  "thumb": "/thumbs/three-body.webp",
+  "blurb": "In the three-body problem, three stars started close together almost always end with one thrown out, yet a perfect figure-eight orbit hides in the chaos."
+ },
+ {
+  "id": "Kf2j9WQIX-I",
+  "slug": "sandpile",
+  "title": "Topple This Sandpile In Any Order, Get The Same Fractal",
+  "date": "2026-10-07T22:14:48Z",
+  "thumb": "/thumbs/sandpile.webp",
+  "blurb": "The abelian sandpile lets you topple overfull squares in any order you like, and the final pile always comes out the same."
+ },
+ {
+  "id": "4VXJnra5-ns",
+  "slug": "turing-patterns",
+  "title": "Two Chemicals That Paint Spots All By Themselves",
+  "date": "2026-10-06T21:04:18Z",
+  "thumb": "/thumbs/turing-patterns.webp",
+  "blurb": "Turing patterns are spots and stripes that two chemicals grow by themselves, with nothing telling any spot where to go."
+ },
+ {
+  "id": "dyAqau1dncM",
+  "slug": "double-pendulum",
+  "title": "Two Pendulums, A Billionth Of A Degree Apart",
+  "date": "2026-10-05T19:44:39Z",
+  "thumb": "/thumbs/double-pendulum.webp",
+  "blurb": "This is double pendulum chaos: two pendulums released a billionth of a degree apart move as one for about twelve seconds, then split."
+ },
+ {
+  "id": "BJr4ZkvPwME",
+  "slug": "mandelbrot",
+  "title": "Nobody Designed The Mandelbrot Set",
+  "date": "2026-10-04T20:18:58Z",
+  "thumb": "/thumbs/mandelbrot.webp",
+  "blurb": "Every curl of the Mandelbrot set comes from one rule repeated: square a number, then add c."
+ },
+ {
+  "id": "Gu692tQBvbE",
+  "slug": "borsuk-ulam",
+  "title": "Two Opposite Points on Earth Match. Nobody Knows Where",
+  "date": "2026-10-04T11:01:04Z",
+  "thumb": "/thumbs/borsuk-ulam.webp",
+  "blurb": "The Borsuk-Ulam theorem says that right now, two exactly opposite points on Earth share the same temperature and the same air pressure."
+ },
+ {
+  "id": "RBfTNeZVl7s",
+  "slug": "inscribed-square",
+  "title": "Every loop you draw contains a perfect rectangle",
+  "date": "2026-10-03T07:32:14Z",
+  "thumb": "/thumbs/inscribed-square.webp",
+  "blurb": "The inscribed rectangle problem says every closed loop you can draw has four points on it that form a perfect rectangle."
+ },
+ {
+  "id": "tgSlbaVdfF8",
+  "slug": "wobbly-table",
+  "title": "The quarter turn that fixes any wobbly table",
+  "date": "2026-10-02T14:10:02Z",
+  "thumb": "/thumbs/wobbly-table.webp",
+  "blurb": "The wobbly table theorem says a square table on any lumpy floor can be turned less than a quarter turn until all four legs touch."
+ },
+ {
+  "id": "NTgtPfAeAZk",
+  "slug": "illumination",
+  "title": "A mirrored room with a spot light can't reach",
+  "date": "2026-10-01T08:42:59Z",
+  "thumb": "/thumbs/illumination.webp",
+  "blurb": "The illumination problem asks whether a room of perfect mirrors can have a point the light never reaches."
+ },
+ {
+  "id": "z-qWRyEyhtQ",
+  "slug": "opaque-square",
+  "title": "The best fence to hide a square is 2.639 long. Probably.",
+  "date": "2026-09-30T12:29:10Z",
+  "thumb": "/thumbs/opaque-square.webp",
+  "blurb": "A square field, side one, and you want fence inside it so that no straight line of sight gets through. Three sides costs 3, the two diagonals cost 2.828, the shortest network joining all four corners costs 2.732, and the best fence anyone has ever found costs about 2.639 - in two pieces that never touch. Then a shadow argument proves no fence can be shorter than 2, and that gap has stayed open since 1916."
+ },
+ {
+  "id": "lrkXyIlLDmM",
+  "slug": "hairy-ball",
+  "title": "You Can't Comb a Ball. Anyone Can Comb a Doughnut.",
+  "date": "2026-09-25T18:14:40Z",
+  "thumb": "/thumbs/hairy-ball.webp",
+  "blurb": "Take any fuzzy ball and try to comb every hair flat. You can't, and this is the full thirty minute explanation of why: what a cowlick is worth as a number, why that number can never be combed away, and why it turns out to equal corners minus edges plus faces. By the end you can work out the answer for any shape by counting dots and lines on a drawing, and you'll know why a doughnut combs perfectly, why the sideways wind is dead calm somewhere on Earth right now, and one reason fusion reactors are ring shaped."
+ },
+ {
+  "id": "wccLEyZkq2o",
+  "slug": "benford",
+  "title": "Why 1 starts 30% of real-world numbers",
+  "date": "2026-09-24T14:19:56Z",
+  "thumb": "/thumbs/benford.webp",
+  "blurb": "In big piles of real numbers, the leading digit is a 1 about 30 per cent of the time and a 9 under 5 per cent, and the same shares turn up in powers of two, in Fibonacci numbers and in river lengths. This builds the reason out of one picture, a ruler where equal steps mean equal multiplications, proves why a doubling walk can never get stuck on it, and is honest about the piles of numbers where the whole thing collapses."
+ },
+ {
+  "id": "SgTX8A1jMq0",
+  "slug": "secretary-problem",
+  "title": "Why Rejecting The First 37 People Beats Seeing All 100",
+  "date": "2026-09-23T08:26:14Z",
+  "thumb": "/thumbs/secretary-problem.webp",
+  "blurb": "You interview a hundred people for one job, one at a time, and you have to say yes or no on the spot. Guessing gets you the best person one time in a hundred. A rule that throws away the first thirty-seven gets you the best one about thirty-seven times in a hundred, and this works out why, starting from three candidates you can check with a pencil. It also shows what the rule costs you, which is the part nobody mentions."
+ },
+ {
+  "id": "WnsvMCxaQ7k",
+  "slug": "kakeya",
+  "title": "You Can Turn A Needle Around In Almost No Space",
+  "date": "2026-09-22T17:41:58Z",
+  "thumb": "/thumbs/kakeya.webp",
+  "blurb": "A needle one unit long has to end up pointing the other way, and every scrap of floor it sweeps over gets painted. The disc, the triangle and the three-cornered deltoid all look like sensible answers, and then the whole question falls apart: there is no smallest area, only a smaller one every time. Built from two facts you can check with a pencil, that sliding a needle along its own length is free, and that overlapping shapes don't add up."
+ },
+ {
+  "id": "LwfsahKSnKo",
+  "slug": "nontransitive-dice",
+  "title": "Pick any die you like. This paradox still beats you",
+  "date": "2026-09-21T09:37:11Z",
+  "thumb": "/thumbs/nontransitive-dice.webp",
+  "blurb": "Four ordinary fair dice with unusual faces, where A beats B beats C beats D beats A, every arrow exactly two rolls in three. We check all four match-ups by hand, show why the averages give an order the game ignores, then roll each die twice and watch two of the four arrows flip while the other two hold. Ends where it has to: majority preference between three options can cycle the same way, so a winner was never guaranteed in the first place."
+ },
+ {
+  "id": "UaZ6bSyr5nU",
+  "slug": "prisoners-100",
+  "title": "The Impossible Odds 100 Prisoners Beat",
+  "date": "2026-09-20T13:16:46Z",
+  "thumb": "/thumbs/prisoners-100.webp",
+  "blurb": "A hundred people each get fifty guesses to find their own name among a hundred boxes, and every single one has to succeed. Blind luck gives them worse than one chance in a thousand billion billion billion, yet a rule they can agree on beforehand wins just over thirty-one per cent of the time, without moving a single box. The episode builds the arrow diagram of a shuffle, shows why following slips walks you round a closed loop, and counts the shuffles with a long loop to get the number exactly."
+ },
+ {
+  "id": "mui75LTKKe4",
+  "slug": "braess-paradox",
+  "title": "The Paradox Where a Free Road Slows Everyone Down",
+  "date": "2026-09-19T18:45:59Z",
+  "thumb": "/thumbs/braess-paradox.webp",
+  "blurb": "Four thousand drivers, two routes, and a new road that's free, instant and never congested. Opening it makes every single driver fifteen minutes slower, and nobody can undo it by driving differently. Then the same structure again with two springs and a weight that rises when you cut the string holding it up."
+ },
+ {
+  "id": "QBiBekZe5Ws",
+  "slug": "vedic-cube-roots",
+  "title": "Vedic Math: The Cube Root Trick That Can't Tell You It's Wrong",
+  "date": "2026-09-18T16:54:24Z",
+  "thumb": "/thumbs/vedic-cube-roots.webp",
+  "blurb": "You can read the cube root of a six-digit number off two glances and no arithmetic, and both halves of that have a one-line proof: a cube dissection that kills every piece but the corner, and the fact that every extra digit of the root buys exactly three digits of the cube. Thirty minutes goes on the part nobody shows you - why the identical argument collapses for square roots, and what the method does when you hand it a number that is not a cube at all. It answers, instantly, with total confidence, and it is wrong ninety-nine times out of a hundred."
+ },
+ {
+  "id": "pMkdVS6IuXw",
+  "slug": "vedic-nines-check",
+  "title": "Vedic Math: The check that says your wrong answer is right",
+  "date": "2026-09-17T09:48:09Z",
+  "thumb": "/thumbs/vedic-nines-check.webp",
+  "blurb": "A two-second check tells you a multiplication is wrong without redoing any of it, and then happily passes an answer that is definitely wrong. We work out what the check is actually comparing, why it is blind to exactly the typo you are most likely to make, and how adding one minus sign closes most of the hole."
+ },
+ {
+  "id": "WFiR-lS2CQo",
+  "slug": "vedic-nineteenths",
+  "title": "Vedic Math: Doubling Can Divide By 19",
+  "date": "2026-09-16T08:16:14Z",
+  "thumb": "/thumbs/vedic-nineteenths.webp",
+  "blurb": "One divided by nineteen has an eighteen-digit repeating decimal, and you can write every digit of it using nothing but doubling, starting from the last digit and working backwards. This episode shows the method, then proves why it works: the whole thing rests on a single identity that exists only because twenty is one more than nineteen."
+ },
+ {
+  "id": "QlUaChPAH78",
+  "slug": "vedic-fives",
+  "title": "Why 8 x 9 tells you 85 squared",
+  "date": "2026-09-15T08:10:20Z",
+  "thumb": "/thumbs/vedic-fives.webp",
+  "blurb": "Eighty-five squared is 7225, and you can read that off 8 x 9 without squaring anything. This works out where the extra one actually comes from by cutting the square into hundred-blocks, two strips and a corner, then pushes the same picture into 43 x 47, 91 x 99 and 37 x 77. It also pushes it until it breaks, which happens the moment the last digits stop adding to ten."
+ },
+ {
+  "id": "EEbiNxDShB0",
+  "slug": "vedic-crosswise",
+  "title": "Why 23 x 41 needs no working out",
+  "date": "2026-09-14T11:32:29Z",
+  "thumb": "/thumbs/vedic-crosswise.webp",
+  "blurb": "Twenty-three times forty-one, written straight down in one line with nothing carried on paper. The trick is real, and the reason it works is that a two-digit number is a polynomial in ten - which means the same little grid of products explains school algebra and Karatsuba's 1960 method, the first thing ever shown to beat long multiplication. Including the honest limit: the sutra saves paper, not multiplications."
+ },
+ {
+  "id": "tG0_-ITv3Aw",
+  "slug": "vedic-nikhilam",
+  "title": "The multiplication trick that breaks at 88 x 89",
+  "date": "2026-09-13T18:43:33Z",
+  "thumb": "/thumbs/vedic-nikhilam.webp",
+  "blurb": "Ninety-seven times ninety-six, done in one line without a times table, where the two halves of the answer look glued on rather than calculated. This episode draws the hundred by hundred square the shortcut is really working with, shows why one small corner has to be counted twice, and then uses that same picture to explain the case everyone calls an exception. It also covers where the method stops being worth doing, how to move the base to fix that, and where the name 'Vedic maths' actually came from."
+ },
+ {
+  "id": "LfUdLHc6E3U",
+  "slug": "pappus",
+  "title": "A doughnut holds the same as a straight tube",
+  "date": "2026-09-12T10:21:13Z",
+  "thumb": "/thumbs/pappus.webp",
+  "blurb": "A ring doughnut has exactly the volume of the straight tube you would get by cutting it and rolling it out, even though bending the tube stretches its outer half and squashes its inner half. This episode finds the one number that makes those two distortions cancel - the shape's balance point - proves Pappus's centroid theorem by chopping the shape into scraps, then uses it to get the cone, the sphere's volume and the sphere's surface area with no integral, and shows the one case where it collapses to zero."
+ },
+ {
+  "id": "fGLQbp_Hp4g",
+  "slug": "intermediate-axis",
+  "title": "If You Don't Understand Spin, You Don't Understand Your Phone",
+  "date": "2026-09-11T09:28:50Z",
+  "thumb": "/thumbs/intermediate-axis.webp",
+  "blurb": "Throw a phone end over end and it flips itself a half turn in mid air, with nothing touching it and every conservation law intact. Spin it the other two ways and it never happens. Thirty minutes to build the complete answer: the three moments of inertia, Euler's equations, the wobble that grows a hundred and forty times per turn, and Poinsot's sphere and ellipsoid picture where the middle axis turns out to be a mountain pass. It ends with why Explorer One started tumbling within hours of launch, and why the viral claim that the Earth is due a flip has it exactly backwards."
+ },
+ {
+  "id": "pyrrNffIWn4",
+  "slug": "hatbox",
+  "title": "Two Cuts Through a Ball, Always the Same Area",
+  "date": "2026-09-10T09:52:05Z",
+  "thumb": "/thumbs/hatbox.webp",
+  "blurb": "A ball inside the tightest tin can that holds it. Cut both with the same two horizontal planes, anywhere you like, and the strip of ball skin has exactly the same area as the strip of can wall beside it. This episode shows the cancellation that makes it work, uses it to derive the surface area of a sphere without calculus, and then explains why one world map tells the truth about area and Mercator doesn't."
+ },
+ {
+  "id": "tfxnvaxLXX0",
+  "slug": "navier-stokes",
+  "title": "A Fluid That Starts at Rest and Reaches Infinite Speed",
+  "date": "2026-09-09T08:39:11Z",
+  "thumb": "/thumbs/navier-stokes.webp",
+  "blurb": "The Navier-Stokes equations can drive a fluid from perfect rest to infinite speed in one second, with a smooth force and an energy budget that never blows up. This episode works out why unbounded speed and bounded energy are not a contradiction (speed enters the energy squared, volume dies cubed, and cubed wins), shows the collapsing vortex that does it, and is honest about which of the four Clay statements got proved this week and which one is still open."
+ },
+ {
+  "id": "GsVARtWuQvc",
+  "slug": "steinmetz",
+  "title": "The round solid with no pi in its volume",
+  "date": "2026-09-08T08:55:26Z",
+  "thumb": "/thumbs/steinmetz.webp",
+  "blurb": "Two identical pipes pushed through each other at right angles carve out a solid with no flat face and no straight edge anywhere on it - and its volume is a plain fraction with no pi in it. This episode shows exactly where the pi goes, by slicing the solid and a ball of the same radius at the same heights and watching every circle turn into the square drawn around it. The same trick, used the other way round, is how Archimedes got the volume of the sphere."
+ },
+ {
+  "id": "8OlHzW8Tuu0",
+  "slug": "monge",
+  "title": "Why three circles always give you a straight line",
+  "date": "2026-09-07T10:41:27Z",
+  "thumb": "/thumbs/monge.webp",
+  "blurb": "Draw three circles of different sizes and the outside tangent lines of each pair meet at three points that always land on one straight line. The flat proof is a page of cancelling ratios that shows you nothing. The real proof grows a ball out of every circle, rests a sheet of glass on top, and the line turns out to be the crease where the glass cuts the paper."
+ },
+ {
+  "id": "_-kbO-j9Jsk",
+  "slug": "bottema",
+  "title": "Two Squares, One Point That Never Moves",
+  "date": "2026-09-06T08:24:18Z",
+  "thumb": "/thumbs/bottema.webp",
+  "blurb": "Build a square outward on two sides of a triangle, mark the corner of each square opposite the shared vertex, and join those two corners. Drag that shared vertex anywhere in the plane and the squares swing and stretch wildly, but the midpoint of that segment never moves. This is Bottema's theorem, and the entire proof is one letter cancelling in one line of algebra, which then hands you Van Aubel's theorem and Napoleon's theorem for free."
+ },
+ {
+  "id": "EKeyG6asvEs",
+  "slug": "dandelin-spheres",
+  "title": "Two pins and a cone shouldn't draw the same curve",
+  "date": "2026-09-05T15:59:40Z",
+  "thumb": "/thumbs/dandelin-spheres.webp",
+  "blurb": "An ellipse can be drawn with two pins and a loop of string, or cut out of a cone with a flat plane. Those two machines have nothing in common, and this is the proof that they make the exact same curve: Dandelin's 1822 argument, with two spheres dropped inside the cone, watched in 3D. It rests on one fact about touching a sphere from outside."
+ },
+ {
+  "id": "lx9nz-Wnagg",
+  "slug": "dehn-invariant",
+  "title": "Why Volume Needs Calculus And Area Doesn't",
+  "date": "2026-09-04T09:55:52Z",
+  "thumb": "/thumbs/dehn-invariant.webp",
+  "blurb": "Any polygon can be cut into finitely many pieces and rebuilt as any other polygon of the same area, with no calculus anywhere. In three dimensions that fails, and Max Dehn proved it in 1900 with a single number computed from a solid's edges and its angles. This is the complete argument, start to finish: the plane construction performed step by step, the Dehn invariant built from scratch and checked against every kind of cut, and the proof that the tetrahedron's dihedral angle is not a rational fraction of pi - which is why the pyramid formula has needed a limit for two thousand years."
+ },
+ {
+  "id": "cFr_33FcSuU",
+  "slug": "gomboc",
+  "title": "Put It Down Any Way You Like. It Stands Back Up.",
+  "date": "2026-09-03T05:52:05Z",
+  "thumb": "/thumbs/gomboc.webp",
+  "blurb": "A convex solid of a single uniform material that always rolls back to the same resting pose - no hidden weights, no lead in the base. We show why a shape like this is provably impossible in two dimensions, how the third dimension opens a loophole, and how Domokos and Varkonyi turned Arnold's 1995 conjecture into the gomboc: a shape within a tenth of a percent of a sphere that a tortoise, it turns out, was wearing all along."
+ },
+ {
+  "id": "CkEH5A3ZE-Y",
+  "slug": "straight-line-linkage",
+  "title": "Nothing In This Machine Is Straight. It Draws a Straight Line.",
+  "date": "2026-09-02T07:28:30Z",
+  "thumb": "/thumbs/straight-line-linkage.webp",
+  "blurb": "Every joint in the Peaucellier-Lipkin linkage swings in a circle, yet one point on it traces a perfectly, provably straight line - the first machine ever built to do it. We assemble the seven bars from scratch, prove why it works with Pythagoras twice and a circle inversion, and see why it beat the merely approximate linkage that ran the industrial world for eighty years."
+ },
+ {
+  "id": "Yq3WNyROyH0",
+  "slug": "constant-width",
+  "title": "The Shape With Corners That Rolls Like a Wheel",
+  "date": "2026-09-01T06:37:00Z",
+  "thumb": "/thumbs/constant-width.webp",
+  "blurb": "A circle rolls smoothly because it's the same width in every direction, but it isn't the only shape that is. We build the Reuleaux triangle from three compass arcs, show why a plank resting on top of it never rises or falls, and land on Barbier's theorem: every curve of constant width has exactly the same perimeter as a circle of that width. Same distance around, different area, and the real reason a fifty pence coin is shaped the way it is."
+ },
+ {
+  "id": "cxUxajYPqYY",
+  "slug": "borwein",
+  "title": "Seven Times Exactly Right, Then It Breaks",
+  "date": "2026-08-31T05:32:26Z",
+  "thumb": "/thumbs/borwein.webp",
+  "blurb": "Seven integrals in a row come out to exactly pi over two, and the eighth misses by a hair - and the reason has nothing to do with the number eight. Flip each curve into the Fourier world and it becomes a box; multiplying the curves becomes smoothing that box, and the answer stays exact until the smoothing finally eats through the box's flat top. It's a clean lesson in why a pattern that holds seven times still isn't a proof."
+ },
+ {
+  "id": "Vj44ZHHwlHE",
+  "slug": "integral-tricks",
+  "title": "Three Integrals You Solve by Not Solving Them",
+  "date": "2026-08-30T07:55:27Z",
+  "thumb": "/thumbs/integral-tricks.webp",
+  "blurb": "Some integrals have an exact, clean value but no antiderivative you can ever write down, so the method you learned in calculus simply cannot reach them. This is three tricks that find the number anyway: reflect the integral into a trivial one, square it into a surface with a symmetry, or hide a parameter inside it and differentiate. The thread is one move - you never attack the integral, you change what you are integrating."
+ },
+ {
+  "id": "NnuRncosuXw",
+  "slug": "unit-distance",
+  "title": "An AI 'Solved' a Famous Math Problem - Then 9 Mathematicians Checked Its Work",
+  "date": "2026-08-29T05:48:27Z",
+  "thumb": "/thumbs/unit-distance.webp",
+  "blurb": "In May 2026 OpenAI said one of its models disproved a conjecture Erdos built around counting unit distances between points, arguably the first time an AI settled an open problem on its own. But the machine only proved a jump was possible without saying how big it was; the clean write-up and the famous n^1.014 bound came from a nine-person human team. This is what the AI actually did, what the humans did, and why the credit is genuinely shared."
+ },
+ {
+  "id": "Q4t41umG960",
+  "slug": "bicycle-tracks",
+  "title": "The Bike-Track Clue Sherlock Got Wrong",
+  "date": "2026-08-28T06:16:12Z",
+  "thumb": "/thumbs/bicycle-tracks.webp",
+  "blurb": "A bike leaves two curves in the mud and no arrows, yet the shape alone fixes which way it rode off. The reason is pure geometry: the rear wheel is always tangent to its own track and always exactly one wheelbase from the front, so a single tangent step betrays the direction of travel - the very clue Sherlock Holmes reached past in The Priory School."
+ },
+ {
+  "id": "QCCTsQNhxkM",
+  "slug": "villarceau",
+  "title": "The Two Perfect Circles Hidden in a Donut",
+  "date": "2026-08-27T06:53:11Z",
+  "thumb": "/thumbs/villarceau.webp",
+  "blurb": "Slice a donut at almost any slant and the cross-section is a lumpy oval or a figure-eight - except at one exact tilt, where it opens into two flawless circles. This episode builds that tilt from scratch, shows why the cut only kisses the surface at two points, and gives the reason each loop is a true circle. It ends on the fact that four circles pass through every single point of a donut."
+ },
+ {
+  "id": "fbQDt_f1eug",
+  "slug": "domino-fault-lines",
+  "title": "6,728 ways to tile it, and every one cracks",
+  "date": "2026-08-26T09:53:01Z",
+  "thumb": "/thumbs/domino-fault-lines.webp",
+  "blurb": "A six-by-six board can be tiled with dominoes in 6,728 ways, and every single one splits along a hidden fault line, while its neighbours five-by-six and six-by-seven hold together fine. This is the counting argument for why the six-by-six is the one board that can never be fault-free: it needs twenty domino crossings and only owns eighteen. The same idea explains why the smaller six-by-seven has more solid tilings than the larger six-by-eight."
+ },
+ {
+  "id": "N2ZzgZx1_V4",
+  "slug": "simpsons-paradox",
+  "title": "Every Department Favored Women. The Total Didn't.",
+  "date": "2026-08-25T07:03:39Z",
+  "thumb": "/thumbs/simpsons-paradox.webp",
+  "blurb": "In 1973 Berkeley's graduate admissions looked biased against women overall, yet department by department women were admitted at an equal or higher rate. This episode builds the smallest version of that reversal by hand, then draws it as arrows added tip to tail, so you can see exactly why combining two honest averages can flip the result. By the end you will know Simpson's paradox well enough to spot it in the wild."
+ },
+ {
+  "id": "iQ_K3ipwZuQ",
+  "slug": "rule72",
+  "title": "Why the Rule of 72 Isn't the Rule of 69",
+  "date": "2026-08-24T16:15:00Z",
+  "thumb": "/thumbs/rule72.webp",
+  "blurb": "Divide 72 by an interest rate and you get the years it takes for money to double - but the honest number from the math is 69.3, not 72. This episode builds the rule from repeated multiplication and logarithms, then shows the two reasons 72 wins: it divides cleanly, and it quietly corrects for interest that lands once a year."
+ },
+ {
+  "id": "jEw11LhdBbc",
+  "slug": "rupert",
+  "title": "A bigger cube can pass through a smaller cube",
+  "date": "2026-08-23T22:35:00Z",
+  "thumb": "/thumbs/rupert.webp",
+  "blurb": "Stand a cube on its corner and its shadow becomes a perfect hexagon - with enough room inside for a square bigger than the cube's own face. That one fact lets a cube slide clean through a straight hole in a smaller cube, and the whole proof comes down to whether 49 beats 48. A four-move argument Prince Rupert of the Rhine won a bet on."
+ },
+ {
+  "id": "nLupRB5HG0Q",
+  "slug": "four-bugs",
+  "title": "Four Bugs Chasing Each Other Walk Exactly One Side",
+  "date": "2026-08-22T19:45:00Z",
+  "thumb": "/thumbs/four-bugs.webp",
+  "blurb": "Four bugs sit at the corners of a square, each walking straight at the one to its left. They spiral inward through infinitely many turns and meet in the centre, yet each one walks a distance of exactly the side of the square. We prove it in four short steps, then change the shape to see why the square is the one case that comes out this clean."
+ },
+ {
+  "id": "S3anWaaaRgY",
+  "slug": "golden-combs",
+  "title": "Two Combs That Split Every Integer",
+  "date": "2026-08-21T16:20:00Z",
+  "thumb": "/thumbs/golden-combs.webp",
+  "blurb": "Take the golden ratio, multiply it by 1, 2, 3 and round each result down to build one list, then do the same with its square to build a second. Every positive whole number lands in exactly one of those two lists - no overlaps, no gaps, forever - and the whole thing rests on a single fact: phi squared equals phi plus one. We prove it by counting alone."
+ },
+ {
+  "id": "fj8BtRJFxQg",
+  "slug": "napkin-ring",
+  "title": "The Hole That Forgets How Big the Sphere Was",
+  "date": "2026-08-20T18:05:00Z",
+  "thumb": "/thumbs/napkin-ring.webp",
+  "blurb": "Drill a hole through the center of a sphere, keep the leftover band, and its volume depends only on how tall the band is - not on the sphere you started with. A six-centimeter ring drilled from a marble holds exactly as much material as one drilled from the Earth. We prove it with one line of algebra and one idea, and find out what is really left in your hand."
+ },
+ {
+  "id": "ZJEjDd16VhI",
+  "slug": "trisect",
+  "title": "Paper Can Trisect an Angle. A Compass Can't.",
+  "date": "2026-08-19T14:47:00Z",
+  "thumb": "/thumbs/trisect.webp",
+  "blurb": "A folded sheet of paper can split any angle into three equal parts in seconds, yet a compass and an unmarked straightedge provably cannot do it for sixty degrees. This episode turns that paradox into a question about numbers: what these two tools can actually build, why trisecting sixty degrees secretly demands a cube root, and why that single fact makes it impossible. It ends where it starts, at the paper, with the real reason origami can do what the compass cannot."
+ },
+ {
+  "id": "kWrGDnHOTFI",
+  "slug": "buffon",
+  "title": "He Claimed Pi to Six Decimals From 3,408 Needle Drops",
+  "date": "2026-08-18T20:28:18Z",
+  "thumb": "/thumbs/buffon.webp",
+  "blurb": "Drop a needle on a floor of evenly spaced lines and the chance it crosses one is exactly two over pi, even though there is no circle anywhere in the picture. This episode builds Barbier's calculus-free proof of why that happens, then uses it to take apart a famous 1901 experiment that reported pi to six decimals from just 3,408 drops. You will see both why the trick is genuinely beautiful and why those six decimals could not have come from honest sampling."
+ },
+ {
+  "id": "vt27SqBKYcg",
+  "slug": "five-solids",
+  "title": "Why There Are Exactly Five Perfect Solids",
+  "date": "2026-08-17T19:16:10Z",
+  "thumb": "/thumbs/five-solids.webp",
+  "blurb": "A cube is perfectly regular: identical square faces, the same three meeting at every corner. This episode asks how many other solids are that perfect, then proves - just by counting corners, edges and faces - that the answer is exactly five. Not five that we know of, but five that can ever exist."
+ },
+ {
+  "id": "OwzKRL_Pq24",
+  "slug": "sofa",
+  "title": "58 Years Later, Did We Finally Solve the Sofa Problem?",
+  "date": "2026-08-16T06:38:12Z",
+  "thumb": "/thumbs/sofa.webp",
+  "blurb": "You have a sofa and a right-angled corner joining two hallways of the same width. This is the moving sofa problem: what is the single largest shape that can turn that corner, why the answer is a strange lopsided figure instead of a rectangle or a circle, and how a fifty-eight-year search may have just ended with a hand-written proof that is still being checked."
+ },
+ {
+  "id": "SkgoSjdaXdY",
+  "slug": "jacobian",
+  "title": "Did an AI Just Disprove an 87-Year-Old Math Conjecture?",
+  "date": "2026-08-15T08:26:38Z",
+  "thumb": "/thumbs/jacobian.webp",
+  "blurb": "A polynomial map with a constant, nonzero Jacobian should be reversible - that is the Jacobian conjecture, open since 1939 and believed by almost everyone. This episode builds the conjecture from a single line upward, then shows the explicit map from complex three-space that satisfies its hypothesis yet folds three different points onto one, so it can have no inverse. It ends with the part that made news: the counterexample is settled mathematics, but the claim that an AI found it comes from the discoverers, not from independent proof."
+ },
+ {
+  "id": "7BmmvSt0emA",
+  "slug": "ai-matrix",
+  "title": "A Machine Found the Shortcut Humans Missed for 50 Years",
+  "date": "2026-08-14T15:14:56Z",
+  "thumb": "/thumbs/ai-matrix.webp",
+  "blurb": "Multiplying two 2x2 matrices obviously takes eight multiplications - one for each product in each of the four entries. In 1969 Volker Strassen did it in seven. This video derives his trick on screen: all seven products, and the cancellation that rebuilds the answer out of them."
+ },
+ {
+  "id": "VPROOWDQQ8g",
+  "slug": "fourier-circles",
+  "title": "Circles Have No Corners. Watch Them Make One.",
+  "date": "2026-08-13T04:09:25Z",
+  "thumb": "/thumbs/fourier-circles.webp",
+  "blurb": "A square wave is nothing but flat tops and vertical cliffs. A circle is nothing but curve. This video builds the first entirely out of the second."
+ }
+]

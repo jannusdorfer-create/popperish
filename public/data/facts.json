@@ -1,0 +1,639 @@
+{
+ "kempeYear": {
+  "value": 1879,
+  "say": "Alfred Kempe published his proof in 1879.",
+  "source": "A. B. Kempe, On the Geographical Problem of the Four Colours, American Journal of Mathematics 2 (1879) 193-200"
+ },
+ "heawoodYear": {
+  "value": 1890,
+  "say": "Percy Heawood found the hole in 1890, eleven years later.",
+  "source": "P. J. Heawood, Map-colour theorem, Quarterly Journal of Pure and Applied Mathematics 24 (1890) 332-338"
+ },
+ "yearsUnnoticed": {
+  "value": 11,
+  "say": "Kempe's proof stood for eleven years.",
+  "source": "1890 - 1879 (Kempe 1879; Heawood 1890)"
+ },
+ "heawoodMapRegions": {
+  "value": 25,
+  "say": "Heawood's counterexample map had 25 regions.",
+  "source": "Heawood 1890; https://mathworld.wolfram.com/HeawoodFour-ColorMap.html (check before voicing)"
+ },
+ "erreraGraph": {
+  "value": {
+   "vertices": 17,
+   "edges": 45,
+   "year": 1921
+  },
+  "say": "Errera's 1921 graph (17 regions) breaks Kempe's whole method, not just one step.",
+  "source": "https://en.wikipedia.org/wiki/Errera_graph"
+ },
+ "kittellGraph": {
+  "value": {
+   "vertices": 23,
+   "edges": 63,
+   "year": 1935
+  },
+  "say": "Kittell's 1935 graph has 23 regions.",
+  "source": "https://en.wikipedia.org/wiki/Kittell_graph"
+ },
+ "smallestKempeCounterexample": {
+  "value": 9,
+  "say": "The smallest graphs where Kempe's swaps tangle have 9 regions (Soifer 1997, Fritsch 1998).",
+  "source": "Gethner and Springer, How False Is Kempe's Proof of the Four Color Theorem?, Congressus Numerantium 164 (2003); https://mathworld.wolfram.com/SoiferGraph.html"
+ },
+ "heawoodFiveColor": {
+  "value": 1890,
+  "say": "Heawood rescued Kempe's chains to prove five colors always suffice.",
+  "source": "Heawood 1890"
+ },
+ "appelHaken": {
+  "value": 1976,
+  "say": "The four color theorem was finally proved in 1976 by Appel and Haken, with a computer.",
+  "source": "K. Appel, W. Haken, Every planar map is four colorable, Illinois J. Math 21 (1977); announced 1976"
+ },
+ "heawood3col": {
+  "value": "a triangulated map is 3-colorable exactly when every region has an even number of neighbors",
+  "say": "If three regions meet at every corner, three inks are enough exactly when every region has an even number of neighbors.",
+  "source": "Heawood 1898 (Quart. J. Pure Appl. Math. 29); checked on every random map in our run"
+ },
+ "newsHook": {
+  "value": "University of Copenhagen + DTU press release 2026-11-17: a fast four-coloring algorithm (an algorithm, not a new proof)",
+  "say": "This week a Danish team announced a fast way to actually find a four-coloring.",
+  "source": "CONTRACT.md (press release 2026-11-17); verify wording and authors against the release before voicing"
+ },
+ "statesRegions": {
+  "value": 49,
+  "say": "48 states plus DC.",
+  "source": "our run: sims/fourcolor/maps.py us_states (us-atlas 3.0.1, Census)"
+ },
+ "statesBorders": {
+  "value": 107,
+  "say": "107 pairs of neighboring states.",
+  "source": "our run: sims/fourcolor/maps.py us_states"
+ },
+ "fourCornersNotAdjacent": {
+  "value": [
+   [
+    "AZ",
+    "CO"
+   ],
+   [
+    "NM",
+    "UT"
+   ]
+  ],
+  "say": "Utah-Colorado-Arizona-New Mexico meet at one point; touching at a point does not count, so Arizona and Colorado may share an ink.",
+  "source": "our run: sims/fourcolor/maps.py us_states (points list)"
+ },
+ "statesNeedFour": {
+  "value": true,
+  "say": "The US map cannot be done with three inks.",
+  "source": "our run: sims/fourcolor/analysis.py: SAT says no 3-coloring exists; obstruction checked by brute force"
+ },
+ "statesObstruction": {
+  "value": [
+   "NV",
+   "ID",
+   "UT",
+   "AZ",
+   "CA",
+   "OR"
+  ],
+  "say": "Nevada and its five neighbors: Oregon, Idaho, Utah, Arizona, California form a ring of five around it. An odd ring needs three inks by itself, and Nevada touches all of them, so it needs a fourth.",
+  "source": "our run: sims/fourcolor/analysis.py: smallest odd wheel, all 3^6 = 729 colorings tried, none works"
+ },
+ "statesNoK4": {
+  "value": true,
+  "say": "No four states all touch each other; the smallest reason is an odd ring (6 states).",
+  "source": "our run: sims/fourcolor/analysis.py: all 4-cliques enumerated (none)"
+ },
+ "statesOddRingHubs": {
+  "value": [
+   [
+    "KY",
+    7
+   ],
+   [
+    "NV",
+    5
+   ],
+   [
+    "WV",
+    5
+   ]
+  ],
+  "say": "Nevada and West Virginia have rings of 5 neighbors, Kentucky a ring of 7: each one alone forces a fourth ink.",
+  "source": "our run: sims/fourcolor/analysis.py"
+ },
+ "statesMax": {
+  "value": {
+   "deg": 8,
+   "states": [
+    "MO",
+    "TN"
+   ]
+  },
+  "say": "Missouri and Tennessee touch eight states each, the most.",
+  "source": "our run: sims/fourcolor/analysis.py"
+ },
+ "statesWith5OrFewer": {
+  "value": 36,
+  "say": "36 of the 49 have five or fewer neighbors.",
+  "source": "our run: sims/fourcolor/analysis.py"
+ },
+ "statesMinNeighbours": {
+  "value": 1,
+  "say": "Maine touches only one state (New Hampshire).",
+  "source": "our run: sims/fourcolor/analysis.py"
+ },
+ "greedy3StuckAt": {
+  "value": {
+   "stuck": "ID",
+   "painted": 4,
+   "neighbors": {
+    "OR": 1,
+    "WA": 0,
+    "NV": 2
+   }
+  },
+  "say": "Painting west to east with three inks, it is stuck at Idaho after only 4 states: Washington, Oregon and Nevada already use all three.",
+  "source": "our run: sims/fourcolor/analysis.py greedy_states_3"
+ },
+ "search3Backtracks": {
+  "value": 9,
+  "say": "A careful search on Nevada's ring dies in every branch: 9 backtracks and no way to do it with three.",
+  "source": "our run: sims/fourcolor/analysis.py search_states_3"
+ },
+ "search3WholeMap": {
+  "value": 35,
+  "say": "Searching the whole map with three inks: 35 backtracks, then proof there is no way.",
+  "source": "our run: sims/fourcolor/analysis.py (DSATUR order, first ink fixed)"
+ },
+ "greedy4StuckAt": {
+  "value": {
+   "state": "KY",
+   "neighbors": {
+    "TN": 3,
+    "IL": 0,
+    "IN": 1,
+    "MO": 2
+   },
+   "plumNeeded": [
+    "KY"
+   ]
+  },
+  "say": "Even with four inks, painting west to east without thinking gets stuck at Kentucky: Missouri, Illinois, Indiana and Tennessee already use all four. Four is enough, but not if you paint greedily.",
+  "source": "our run: sims/fourcolor/analysis.py greedy_states_4"
+ },
+ "kempeStates": {
+  "value": {
+   "free": 47,
+   "swap": 2,
+   "hard": 0
+  },
+  "say": "Kempe's method on the US map: 47 states come back with an ink free, 2 need one chain swap; his flawed step never comes up.",
+  "source": "our run: sims/fourcolor/analysis.py kempe_states"
+ },
+ "countiesRegions": {
+  "value": 3108,
+  "say": "3,108 counties in the lower 48.",
+  "source": "our run: sims/fourcolor/maps.py us_counties"
+ },
+ "countiesBorders": {
+  "value": 8729,
+  "say": "8,729 county borders.",
+  "source": "our run: sims/fourcolor/maps.py us_counties"
+ },
+ "countiesObstruction": {
+  "value": [
+   "Catoosa (GA)",
+   "Walker (GA)",
+   "Whitfield (GA)",
+   "Hamilton (TN)"
+  ],
+  "say": "Catoosa, Walker and Whitfield in Georgia and Hamilton in Tennessee all touch each other: four counties, four inks, no way around it.",
+  "source": "our run: sims/fourcolor/analysis.py: 4-clique; SAT confirms no 3-coloring"
+ },
+ "countiesK4Count": {
+  "value": 23,
+  "say": "23 sets of four counties that all touch each other.",
+  "source": "our run: sims/fourcolor/analysis.py"
+ },
+ "countiesMax": {
+  "value": {
+   "deg": 13,
+   "county": [
+    "Washoe (NV)"
+   ]
+  },
+  "say": "The county with the most neighbors touches 13.",
+  "source": "our run: sims/fourcolor/analysis.py"
+ },
+ "countiesNotPlanarGraph": {
+  "value": {
+   "planar": false,
+   "planarWhenPiecesSplit": true,
+   "multiPiece": 46
+  },
+  "say": "As a network the county map is not even flat, because some counties come in several pieces; still four inks do it.",
+  "source": "our run: sims/fourcolor/analysis.py (networkx planarity)"
+ },
+ "worldRegions": {
+  "value": 241,
+  "say": "241 countries and territories (Natural Earth).",
+  "source": "our run: sims/fourcolor/maps.py world"
+ },
+ "worldK4": {
+  "value": [
+   "BEL",
+   "DEU",
+   "FRA",
+   "LUX"
+  ],
+  "say": "Belgium, France, Germany and Luxembourg all touch each other, so Europe needs four inks.",
+  "source": "our run: sims/fourcolor/analysis.py: 4-clique, brute force + SAT"
+ },
+ "worldFourWithExclaves": {
+  "value": true,
+  "say": "Even if every piece of a country must wear the same ink (Kaliningrad with Russia, Nakhchivan with Azerbaijan, Cabinda with Angola, Alaska with the US, French Guiana with France), the real world map still needs only four.",
+  "source": "our run: sims/fourcolor/analysis.py: SAT 4-coloring found and checked edge by edge"
+ },
+ "worldNotPlanarWithExclaves": {
+  "value": {
+   "planar": false,
+   "kuratowski": {
+    "nodes": [
+     "ARM",
+     "AZE",
+     "BGR",
+     "GEO",
+     "IRN",
+     "KAZ",
+     "ROU",
+     "RUS",
+     "TKM",
+     "TUR",
+     "UKR"
+    ],
+    "edges": 16
+   }
+  },
+  "say": "With exclaves glued to their countries, the world's border network is no longer a flat map, so the theorem does not even promise four. It happens to work anyway.",
+  "source": "our run: sims/fourcolor/analysis.py (networkx planarity + Kuratowski subgraph)"
+ },
+ "worldExclaves": {
+  "value": [
+   {
+    "country": "GBR",
+    "part": 21,
+    "touches": [
+     "IRL"
+    ],
+    "only_via_this_part": [
+     "IRL"
+    ]
+   },
+   {
+    "country": "TUR",
+    "part": 2,
+    "touches": [
+     "BGR",
+     "GRC"
+    ],
+    "only_via_this_part": [
+     "BGR",
+     "GRC"
+    ]
+   },
+   {
+    "country": "RUS",
+    "part": 97,
+    "touches": [
+     "LTU",
+     "POL"
+    ],
+    "only_via_this_part": [
+     "LTU",
+     "POL"
+    ]
+   },
+   {
+    "country": "MYS",
+    "part": 0,
+    "touches": [
+     "THA"
+    ],
+    "only_via_this_part": [
+     "THA"
+    ]
+   },
+   {
+    "country": "PSE",
+    "part": 0,
+    "touches": [
+     "EGY",
+     "ISR"
+    ],
+    "only_via_this_part": [
+     "EGY"
+    ]
+   },
+   {
+    "country": "IDN",
+    "part": 31,
+    "touches": [
+     "TLS"
+    ],
+    "only_via_this_part": [
+     "TLS"
+    ]
+   },
+   {
+    "country": "IDN",
+    "part": 35,
+    "touches": [
+     "PNG"
+    ],
+    "only_via_this_part": [
+     "PNG"
+    ]
+   },
+   {
+    "country": "FRA",
+    "part": 9,
+    "touches": [
+     "BRA",
+     "SUR"
+    ],
+    "only_via_this_part": [
+     "BRA",
+     "SUR"
+    ]
+   },
+   {
+    "country": "HRV",
+    "part": 12,
+    "touches": [
+     "BIH",
+     "MNE"
+    ],
+    "only_via_this_part": [
+     "MNE"
+    ]
+   },
+   {
+    "country": "AZE",
+    "part": 0,
+    "touches": [
+     "ARM",
+     "IRN",
+     "TUR"
+    ],
+    "only_via_this_part": [
+     "TUR"
+    ]
+   },
+   {
+    "country": "AGO",
+    "part": 0,
+    "touches": [
+     "COD",
+     "COG"
+    ],
+    "only_via_this_part": [
+     "COG"
+    ]
+   }
+  ],
+  "say": "Neighbours that exist only through an exclave: Russia-Poland and Russia-Lithuania (Kaliningrad), Azerbaijan-Turkey (Nakhchivan), Angola-Congo (Cabinda), France-Brazil and France-Suriname (French Guiana), UK-Ireland (Northern Ireland).",
+  "source": "our run: sims/fourcolor/analysis.py world_parts (non-largest part with a land border)"
+ },
+ "worldMaxNeighbours": {
+  "value": {
+   "deg": 17,
+   "country": [
+    "CHN"
+   ]
+  },
+  "say": "China touches 17 countries in this data.",
+  "source": "our run: sims/fourcolor/analysis.py"
+ },
+ "worldPointContacts": {
+  "value": [
+   [
+    "BWA",
+    "ZMB"
+   ],
+   [
+    "NAM",
+    "ZWE"
+   ]
+  ],
+  "say": "Botswana and Zambia meet at a point (Kazungula); in this data so do Namibia and Zimbabwe.",
+  "source": "our run: sims/fourcolor/maps.py world (points); the real Botswana-Zambia contact is about 150 m of river"
+ },
+ "kempeFailMap": {
+  "value": {
+   "regions": 9,
+   "v": 0,
+   "w": [
+    2,
+    7,
+    3,
+    6,
+    5
+   ],
+   "clash": [
+    [
+     1,
+     4
+    ]
+   ],
+   "seed": [
+    20261123,
+    7777,
+    8,
+    10
+   ]
+  },
+  "say": "On this nine-region map Kempe's two swaps are each legal, but done together they leave two neighbors on the same ink.",
+  "source": "our run: sims/fourcolor/samples.py find_kempe_fail, verified by verify_kempe.py (independent networkx code)"
+ },
+ "kempeFixFlips": {
+  "value": 2,
+  "say": "Done one swap at a time and re-checked, 2 swaps free an ink and the map is fine.",
+  "source": "our run: sims/fourcolor/analysis.py kempe_fix"
+ },
+ "randomN": {
+  "value": 1000000,
+  "say": "1,000,000 random maps.",
+  "source": "our run: sims/fourcolor/run_random.py"
+ },
+ "randomSizes": {
+  "value": [
+   8,
+   600
+  ],
+  "say": "From 8 to 600 regions each, plus the sea.",
+  "source": "our run: sims/fourcolor/randmap.py"
+ },
+ "randomChromatic": {
+  "value": {
+   "2": 0,
+   "3": 490,
+   "4": 999510,
+   "5+": 0
+  },
+  "say": "999,510 of them need exactly four inks; only 490 manage with three; none needs five.",
+  "source": "our run: sims/fourcolor/run_random.py (exact)"
+ },
+ "randomGreedy": {
+  "value": {
+   "3": 460,
+   "4": 114199,
+   "5": 648436,
+   "6": 236537,
+   "7": 368
+  },
+  "say": "Greedy west to east needed a fifth ink on 885,341 maps (88.53%).",
+  "source": "our run: sims/fourcolor/run_random.py"
+ },
+ "kempeClashMaps": {
+  "value": {
+   "clash": 454140,
+   "of": 1000000,
+   "pct": 45.41
+  },
+  "say": "Kempe's exact procedure (fewest-neighbor region first) hit his broken step and failed on 454,140 of 1,000,000 maps (45.41%).",
+  "source": "our run: sims/fourcolor/run_random.py, rule mindeg"
+ },
+ "kempeHardMaps": {
+  "value": {
+   "maps": 499716,
+   "pct": 49.97
+  },
+  "say": "His risky double swap was needed at all on 49.97% of maps.",
+  "source": "our run: sims/fourcolor/run_random.py, rule mindeg"
+ },
+ "kempeClashPerDoubleSwap": {
+  "value": 0.5315,
+  "say": "When he needed the double swap, it went wrong 53% of the time.",
+  "source": "our run: sims/fourcolor/run_random.py, rule mindeg (clash events / double swaps)"
+ },
+ "kempeClashMapsFirstRule": {
+  "value": {
+   "clash": 625895,
+   "pct": 62.59
+  },
+  "say": "Removing the first eligible region instead of the smallest, it fails on 62.59% of maps.",
+  "source": "our run: sims/fourcolor/run_random.py, rule first"
+ },
+ "kempeClashBySize": {
+  "value": {
+   "8-15": [
+    157461,
+    0
+   ],
+   "16-31": [
+    160868,
+    312
+   ],
+   "32-63": [
+    160722,
+    15997
+   ],
+   "64-127": [
+    161061,
+    88251
+   ],
+   "128-255": [
+    161448,
+    151282
+   ],
+   "256-600": [
+    198440,
+    198298
+   ]
+  },
+  "say": "Small maps almost never trip it; big maps almost always do.",
+  "source": "our run: sims/fourcolor/run_random.py by_size (maps, maps with a clash)"
+ },
+ "eulerFiveNeighbours": {
+  "value": {
+   "maxOfFewestNeighbours": 4,
+   "minRegionsWith5OrFewer": 4,
+   "fewestNeighbours": {
+    "3": 895943,
+    "4": 104057
+   }
+  },
+  "say": "Every one of the 1,000,000 maps had a region with five or fewer neighbors, as Euler's formula guarantees (in fact always one with four or fewer).",
+  "source": "our run: sims/fourcolor/run_random.py (fewest neighbors per map; regions with <= 5 per map)"
+ },
+ "kempeSequentialFail": {
+  "value": {
+   "oneOrderFails": 365509,
+   "bothOrdersFail": 248593,
+   "pctBoth": 24.86
+  },
+  "say": "Even done carefully one swap after the other, in either order, his step leaves the region blocked on 24.86% of maps.",
+  "source": "our run: sims/fourcolor/run_random.py, rule mindeg, side check per double swap"
+ },
+ "kempeSmallMapsSafe": {
+  "value": {
+   "maps": 157461,
+   "chromatic": {
+    "3": 488,
+    "4": 156973
+   },
+   "kempe_hard": 0,
+   "kempe_clash": 0,
+   "kempe_clash_first": 5636,
+   "greedy5plus": 79472
+  },
+  "say": "On maps of 8 to 15 regions his flawed step never even came up.",
+  "source": "our run: sims/fourcolor/run_random.py by_size 8-15, rule mindeg"
+ },
+ "kempeBigMapsFail": {
+  "value": {
+   "maps": 198440,
+   "chromatic": {
+    "3": 0,
+    "4": 198440
+   },
+   "kempe_hard": 198439,
+   "kempe_clash": 198298,
+   "kempe_clash_first": 198431,
+   "greedy5plus": 198440
+  },
+  "say": "On maps of 256 to 600 regions it failed on 198,298 of 198,440.",
+  "source": "our run: sims/fourcolor/run_random.py by_size 256-600, rule mindeg"
+ },
+ "kempeFanChoice": {
+  "value": {
+   "maps": 4971,
+   "apex_first": {
+    "hard": 2542,
+    "clash": 2293
+   },
+   "apex_last": {
+    "hard": 2287,
+    "clash": 2042
+   },
+   "big_maps_ge128": {
+    "maps": 1819,
+    "clash_first": 1760,
+    "clash_last": 1719
+   }
+  },
+  "say": "Our one free choice (how the hole is filled) moves the failure rate by a few points, not the picture.",
+  "source": "our run: sims/fourcolor/robust.py (5,000 maps)"
+ },
+ "randomRunSeconds": {
+  "value": 2036.4,
+  "say": "About 34 minutes on 13 cores.",
+  "source": "our run: sims/fourcolor/run_random.py (meta.json)"
+ },
+ "standIn": false
+}
