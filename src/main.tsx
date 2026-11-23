@@ -11,7 +11,7 @@ const LINKS = {
   video: 'https://youtu.be/dkZ3XVz8Lgc', // "Every Map Ever Drawn Needs Only Four Colors", public 2026-11-23 12:00Z
   channel: 'https://www.youtube.com/channel/UCcpfG1Cvp9cmd9RlyjPU_mQ',
   kofi: 'https://ko-fi.com/popperish',
-  discord: '', // no server yet: put the invite link here and the Discord buttons appear
+  discord: 'https://discord.gg/TsszCGeJsP', // never-expiring invite to #welcome
 };
 const MAPS: Record<MapKey, {label: string; title: string; file?: string}> = {
   us: {label: 'US states', title: 'United States', file: 'us_states'},
@@ -584,7 +584,7 @@ function App() {
           <span>POPPERISH</span>
         </a>
         <p>
-          &copy; 2026 Popperish · <a href="/privacy">Privacy and copyright</a> · Map data: US Census Bureau and Natural Earth · <a href={LINKS.channel} target="_blank" rel="noreferrer">YouTube</a> · <a href={LINKS.kofi} target="_blank" rel="noreferrer">Ko-fi</a>
+          &copy; 2026 Popperish · <a href="/privacy">Privacy and copyright</a> · Map data: US Census Bureau and Natural Earth · <a href={LINKS.channel} target="_blank" rel="noreferrer">YouTube</a> · <a href={LINKS.kofi} target="_blank" rel="noreferrer">Ko-fi</a> · <a href={LINKS.discord} target="_blank" rel="noreferrer">Discord</a>
         </p>
       </footer>
       <div className={`toast ${toast ? 'on' : ''}`} role="status">
