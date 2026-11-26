@@ -130,6 +130,21 @@ const fit = (m: FMap, P: {paths: Path2D[]; bb: Float32Array}, card: Card, dpr: n
 const mapT = (c: CanvasRenderingContext2D, L: Lay) => c.setTransform(L.a, 0, 0, L.a, L.e, L.f);
 const box = (L: Lay, i: number, pad = 0): [number, number, number, number] => [L.bb[i * 4] - pad, L.bb[i * 4 + 1] - pad, L.bb[i * 4 + 2] - L.bb[i * 4] + 2 * pad, L.bb[i * 4 + 3] - L.bb[i * 4 + 1] + 2 * pad];
 const hole = (lift: number) => `rgba(26,18,12,${0.9 * lift})`;
+/** The card in map units. Fills and stains are cut to it, so a region that runs far off the map (Russia, out to the Pacific) never hands
+ *  the canvas a rect or an arc thousands of card-widths wide; a Discord viewer saw Russia's settled ink vanish and flash back on erase (2026-11-26). */
+const view = (L: Lay) => {
+  const x = (L.card.x - L.e) / L.a, y = (L.card.y - L.f) / L.a;
+  return [x, y, x + L.card.w / L.a, y + L.card.h / L.a] as const;
+};
+const inView = (L: Lay, [x, y, w, h]: [number, number, number, number]): [number, number, number, number] => {
+  const [vx0, vy0, vx1, vy1] = view(L), x0 = Math.max(x, vx0), y0 = Math.max(y, vy0);
+  return [x0, y0, Math.max(0, Math.min(x + w, vx1) - x0), Math.max(0, Math.min(y + h, vy1) - y0)];
+};
+/** Distance from a stain origin to the farthest card corner: a stain this big covers every visible point of its region. */
+const reach = (L: Lay, ox: number, oz: number) => {
+  const [x0, y0, x1, y1] = view(L);
+  return Math.hypot(Math.max(Math.abs(ox - x0), Math.abs(ox - x1)), Math.max(Math.abs(oz - y0), Math.abs(oz - y1)));
+};
 
 // ------------------------------------------------------------------ layers
 
@@ -149,7 +164,7 @@ const drawBase = (c: CanvasRenderingContext2D, L: Lay, st: InkState) => {
 
 /** One region with its stain at k (from the origin), wetness and lift, painted over whatever is there. */
 const drawRegion = (c: CanvasRenderingContext2D, L: Lay, paper: CanvasPattern, i: number, from: number, to: number, k: number, dry: number, lift: number, o?: [number, number, number]) => {
-  const r = L.m.regions[i], [ox, oz, rad] = o ?? [r.label[0], r.label[1], L.m.rmax[i]], b = box(L, i, 2 / L.s);
+  const r = L.m.regions[i], [ox, oz, rad0] = o ?? [r.label[0], r.label[1], L.m.rmax[i]], b = inView(L, box(L, i, 2 / L.s)), rad = Math.min(rad0, reach(L, ox, oz));
   c.save();
   mapT(c, L);
   c.clip(L.paths[i], 'evenodd');
@@ -274,7 +289,7 @@ const drawOverlays = (c: CanvasRenderingContext2D, L: Lay, st: InkState, ov: Ove
     c.clip(L.paths[i], 'evenodd');
     c.globalAlpha = alpha;
     c.fillStyle = patternFor(c, L, hatchCanvas());
-    c.fillRect(...box(L, i, px(2)));
+    c.fillRect(...inView(L, box(L, i, px(2))));
     c.restore();
   };
   /** 1 = steady; flashes for the first 2.4 s after a key first appears */
