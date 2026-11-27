@@ -1,5 +1,50 @@
 [
  {
+  "id": "YZlJeBRYsG4",
+  "slug": "body-fall",
+  "title": "Can You Predict How A Body Falls?",
+  "date": "2026-11-27T12:58:06Z",
+  "thumb": "/thumbs/body-fall.webp",
+  "blurb": "A crash-test dummy falling down stairs follows exact physics, yet chaos theory means you can't always tell which step he stops on.",
+  "sim": "/fall"
+ },
+ {
+  "id": "Y9s7lhzff4w",
+  "slug": "escher-world",
+  "title": "Could You Get Lost Forever In An Escher World?",
+  "date": "2026-11-26T12:13:58Z",
+  "thumb": "/thumbs/escher-world.webp",
+  "blurb": "Get lost in a world built on hyperbolic geometry and you will very likely never find your way home.",
+  "sim": "/escher"
+ },
+ {
+  "id": "_UzGW9PwWBc",
+  "slug": "gta-npc",
+  "title": "Could A GTA 6 NPC Prove It's In A Game?",
+  "date": "2026-11-25T12:00:00Z",
+  "thumb": "/thumbs/gta-npc.webp",
+  "blurb": "Could a character inside a game prove it lives in one? All it needs is a ball, a wall and a long swim.",
+  "sim": "/npc"
+ },
+ {
+  "id": "_FfKh9IyhTc",
+  "slug": "riemann",
+  "title": "Did An AI Just Prove The Riemann Hypothesis?",
+  "date": "2026-11-24T12:00:00Z",
+  "thumb": "/thumbs/riemann.webp",
+  "blurb": "Someone just posted a claimed proof of the Riemann hypothesis written with an AI, so we checked the first billion zeros ourselves.",
+  "sim": "/riemann"
+ },
+ {
+  "id": "dkZ3XVz8Lgc",
+  "slug": "four-color",
+  "title": "Every Map Ever Drawn Needs Only Four Colors",
+  "date": "2026-11-23T12:00:00Z",
+  "thumb": "/thumbs/four-color.webp",
+  "blurb": "The four color theorem says four inks can color any map so no two neighbors match, and its first proof was wrong for eleven years.",
+  "sim": "/four-color"
+ },
+ {
   "id": "Qop0WqkTxto",
   "slug": "rubik-gods-number",
   "title": "Every Rubik's Cube Is 20 Moves From Solved",

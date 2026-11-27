@@ -1,0 +1,196 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>Be the NPC | Popperish</title>
+    <meta name="description" content="Four tests a game character could run from inside its own game: drop a ball, throw it at a wall, swim far from the middle of the map, count the twins in a crowd. All computed live with the rules of our engine. From the Popperish video Could A GTA 6 NPC Prove It's In A Game?" />
+    <link rel="canonical" href="https://popperish.com/npc" />
+    <meta name="theme-color" content="#0e0c0a" />
+    <link rel="icon" href="/favicon.svg" type="image/svg+xml" />
+    <link rel="apple-touch-icon" href="/apple-touch-icon.png" />
+    <meta property="og:type" content="website" />
+    <meta property="og:site_name" content="Popperish" />
+    <meta property="og:url" content="https://popperish.com/npc" />
+    <meta property="og:title" content="Be the NPC" />
+    <meta property="og:description" content="Four tests a game character could run from inside its game. Drop, throw, swim, count. All live in your browser." />
+    <meta property="og:image" content="https://popperish.com/og-four-color.png" />
+    <meta property="og:image:width" content="1200" />
+    <meta property="og:image:height" content="630" />
+    <meta name="twitter:card" content="summary_large_image" />
+    <meta name="twitter:title" content="Be the NPC" />
+    <meta name="twitter:description" content="Four tests a game character could run from inside its game. Drop, throw, swim, count. All live in your browser." />
+    <meta name="twitter:image" content="https://popperish.com/og-four-color.png" />
+    <link rel="preload" href="/fonts/inter-latin.woff2" as="font" type="font/woff2" crossorigin />
+    <link rel="preload" href="/fonts/archivo-black-latin.woff2" as="font" type="font/woff2" crossorigin />
+    <link rel="stylesheet" href="./style.css" />
+    <script type="module" src="./npc.ts"></script>
+  </head>
+  <body>
+    <header class="top wrap">
+      <a class="brand" href="/" aria-label="Popperish home">
+        <svg class="logo" viewBox="0 0 32 32" aria-hidden="true"><circle cx="16" cy="16" r="13.6" fill="none" stroke="#ffd23f" stroke-width="2.8" /><path d="M10 11.6h12M13.4 11.6v10M18.6 11.6v10" stroke="#ece9e2" stroke-width="3" stroke-linecap="round" /></svg>
+        <span>POPPERISH</span>
+      </a>
+      <nav class="links">
+        <a class="hide-sm" href="/#sims">Simulations</a>
+        <a class="hide-sm" href="https://discord.gg/TsszCGeJsP" target="_blank" rel="noreferrer">Discord</a>
+        <a class="btn" href="https://ko-fi.com/popperish" target="_blank" rel="noreferrer"><span class="hide-sm">Support Popperish</span><span class="show-sm">Support</span></a>
+        <!-- TODO: point this at the episode URL (https://youtu.be/<id>) once it is uploaded; npc.ts swaps in the player as soon as scripts/videos.py lists it -->
+        <a class="btn gold" id="watch-top" href="https://www.youtube.com/channel/UCcpfG1Cvp9cmd9RlyjPU_mQ" target="_blank" rel="noreferrer">
+          <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M7 4.5v15l12-7.5z" /></svg>
+          <span class="hide-sm">Watch the video</span><span class="show-sm">Video</span>
+        </a>
+      </nav>
+    </header>
+
+    <main class="wrap npc">
+      <section class="hero">
+        <p class="kicker">Simulation · Be the NPC</p>
+        <h1>Be the NPC</h1>
+        <p class="intro">A game character cannot look outside its game. But it can run tests inside it. Here are four, computed live in your browser with the same rules as our engine: 60 ticks a second, 32-bit positions, collisions checked once per tick.</p>
+      </section>
+
+      <!-- 1. drop -->
+      <section class="test" aria-labelledby="t1-h">
+        <div class="test-head">
+          <p class="num">Test 1</p>
+          <h2 id="t1-h">Drop a ball</h2>
+          <p class="what">The game only updates 60 times a second, so every fall lasts a whole number of ticks. Real falls do not.</p>
+        </div>
+        <div class="rig">
+          <div class="stage"><canvas id="drop-canvas" role="img" aria-label="Height of a falling ball on each game tick."></canvas><p class="hud" aria-hidden="true">TICK <b id="drop-tick">00</b></p></div>
+          <div class="panel">
+            <div class="ctl">
+              <div class="ctl-top"><label for="drop-in">Drop height</label><output for="drop-in" id="drop-val">2.00 m</output></div>
+              <input type="range" id="drop-in" min="0.5" max="3" step="0.01" value="2" />
+            </div>
+            <div class="buttons"><button type="button" class="btn gold" id="drop-go">Drop it</button></div>
+            <dl class="read">
+              <div><dt>Lands on tick</dt><dd id="drop-ticks">38</dd></div>
+              <div><dt>Game time</dt><dd id="drop-game">0.633 s</dd></div>
+              <div><dt>Real fall time</dt><dd id="drop-real">0.639 s</dd></div>
+            </dl>
+            <p class="note" id="drop-note" role="status">From 2 m the ball lands on tick 38, never between two ticks.</p>
+          </div>
+        </div>
+      </section>
+
+      <!-- 2. wall -->
+      <section class="test" aria-labelledby="t2-h">
+        <div class="test-head">
+          <p class="num">Test 2</p>
+          <h2 id="t2-h">Throw at a wall</h2>
+          <p class="what">The game asks "is the ball touching the wall?" once per tick. Throw fast enough and the ball is in front of the wall on one tick and behind it on the next.</p>
+        </div>
+        <div class="rig fit">
+          <div class="stage"><canvas id="wall-canvas" role="img" aria-label="Top view of a baseball thrown at a 20 centimeter wall, drawn on each game tick."></canvas><p class="hud" aria-hidden="true">TICK <b id="wall-tick">00</b></p></div>
+          <div class="panel">
+            <div class="ctl">
+              <div class="ctl-top"><label for="wall-in">Throw speed</label><output for="wall-in" id="wall-val">100 km/h</output></div>
+              <input type="range" id="wall-in" min="5" max="150" step="1" value="100" />
+            </div>
+            <div class="buttons">
+              <button type="button" class="btn gold" id="wall-throw">Throw</button>
+              <button type="button" class="btn" id="wall-step">Next tick</button>
+              <button type="button" class="btn" id="wall-many">Throw 10,000</button>
+            </div>
+            <dl class="read">
+              <div><dt>One tick covers</dt><dd id="wall-tickcm">46 cm</dd></div>
+              <div><dt>Through (formula)</dt><dd id="wall-formula">41%</dd></div>
+              <div><dt>Through (10,000 throws)</dt><dd id="wall-measured">-</dd></div>
+            </dl>
+            <p class="note" id="wall-note" role="status">The wall is 20 cm and the ball 7.3 cm across, so below 59 km/h a tick never skips the wall.</p>
+          </div>
+        </div>
+      </section>
+
+      <!-- 3. swim -->
+      <section class="test" aria-labelledby="t3-h">
+        <div class="test-head">
+          <p class="num">Test 3</p>
+          <h2 id="t3-h">Swim far from the middle</h2>
+          <p class="what">Positions are 32-bit numbers. Far from the middle of the map they get coarse, and a slow walk can round to a different speed or to nothing.</p>
+        </div>
+        <div class="rig">
+          <div class="stage swim">
+            <canvas id="mini-canvas" role="img" aria-label="Round minimap with the NPC's distance from the middle of the map on a log scale."></canvas>
+            <canvas id="snap-canvas" role="img" aria-label="The NPC's wanted position and actual position on each tick, snapping to the nearest representable number."></canvas>
+          </div>
+          <div class="panel">
+            <div class="ctl">
+              <div class="ctl-top"><label for="swim-in">Distance from the middle</label><output for="swim-in" id="swim-val">1 m</output></div>
+              <input type="range" id="swim-in" min="0" max="600" step="1" value="0" />
+            </div>
+            <div class="chips" role="group" aria-label="Jump to a distance">
+              <button type="button" class="chip" data-d="1000">1 km</button>
+              <button type="button" class="chip" data-d="131072">131 km</button>
+              <button type="button" class="chip" data-d="300000">300 km</button>
+              <button type="button" class="chip" data-d="524288">524 km</button>
+            </div>
+            <dl class="read">
+              <div><dt>Smallest step</dt><dd id="swim-step">0.00012 mm</dd></div>
+              <div><dt>Her speed (wants 1.4)</dt><dd id="swim-speed">1.400 m/s</dd></div>
+              <div><dt>Walk</dt><dd id="swim-state">fine</dd></div>
+            </dl>
+            <p class="note" id="swim-note" role="status">Right in the middle of the map, steps are far finer than anyone could see.</p>
+          </div>
+        </div>
+      </section>
+
+      <!-- 4. twins -->
+      <section class="test" aria-labelledby="t4-h">
+        <div class="test-head">
+          <p class="num">Test 4</p>
+          <h2 id="t4-h">Count the twins</h2>
+          <p class="what">A game builds its crowd from a fixed set of looks. You do not need to walk through all of them to see the same one twice.</p>
+        </div>
+        <div class="rig fit">
+          <div class="stage"><canvas id="twins-canvas" role="img" aria-label="A crowd of pedestrians sent one by one until two of them have the same look."></canvas></div>
+          <div class="panel">
+            <div class="ctl">
+              <div class="ctl-top"><label for="twins-in">Number of looks</label><output for="twins-in" id="twins-val">1,000</output></div>
+              <input type="range" id="twins-in" min="0" max="300" step="1" value="100" />
+            </div>
+            <div class="buttons">
+              <button type="button" class="btn gold" id="twins-go">Send a crowd</button>
+              <button type="button" class="btn" id="twins-many">Run 1,000 crowds</button>
+            </div>
+            <dl class="read">
+              <div><dt>First twin at person</dt><dd id="twins-count">-</dd></div>
+              <div><dt>Median of 1,000 crowds</dt><dd id="twins-median">-</dd></div>
+              <div><dt>1.1774 × √looks</dt><dd id="twins-formula">37</dd></div>
+            </dl>
+            <p class="note" id="twins-note" role="status">Colors are a sketch: only the gold-ringed pair is truly identical.</p>
+          </div>
+        </div>
+      </section>
+
+      <section class="facts">
+        <h2 class="label">What the NPC finds</h2>
+        <div class="fact-grid" id="facts"></div>
+      </section>
+
+      <section class="cta" id="cta">
+        <div>
+          <h2>The whole story is in the video</h2>
+          <p>Could a game character prove it is inside a game? Four tests, and what they tell it.</p>
+        </div>
+        <div class="cta-buttons">
+          <!-- TODO: the episode is not uploaded yet: this links to the channel; swap for the video URL (or let npc.ts embed it) once scripts/videos.py lists slug gta-npc -->
+          <a class="btn gold big" id="watch-cta" href="https://www.youtube.com/channel/UCcpfG1Cvp9cmd9RlyjPU_mQ" target="_blank" rel="noreferrer">Watch on YouTube</a>
+          <a class="btn big" href="https://ko-fi.com/popperish" target="_blank" rel="noreferrer">Support Popperish on Ko-fi</a>
+          <a class="btn big" href="https://discord.gg/TsszCGeJsP" target="_blank" rel="noreferrer">Join the Discord</a>
+        </div>
+      </section>
+    </main>
+
+    <footer class="foot wrap">
+      <a class="brand small" href="/" aria-label="Popperish home">
+        <svg class="logo" viewBox="0 0 32 32" aria-hidden="true"><circle cx="16" cy="16" r="13.6" fill="none" stroke="#ffd23f" stroke-width="2.8" /><path d="M10 11.6h12M13.4 11.6v10M18.6 11.6v10" stroke="#ece9e2" stroke-width="3" stroke-linecap="round" /></svg>
+        <span>POPPERISH</span>
+      </a>
+      <p>&copy; 2026 Popperish · <a href="/privacy">Privacy and copyright</a> · <a href="https://www.youtube.com/channel/UCcpfG1Cvp9cmd9RlyjPU_mQ" target="_blank" rel="noreferrer">YouTube</a> · <a href="https://ko-fi.com/popperish" target="_blank" rel="noreferrer">Ko-fi</a> · <a href="https://discord.gg/TsszCGeJsP" target="_blank" rel="noreferrer">Discord</a></p>
+    </footer>
+  </body>
+</html>

@@ -1,0 +1,149 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>Get lost | Popperish</title>
+    <meta name="description" content="Get lost on a paving of heptagon stones where the floor is curved like a saddle. Send one walker off at random and follow her, then lose 1,000 people at once next to a flat floor, and see how few find their way back. From the Popperish video Could You Get Lost Forever In An Escher World?" />
+    <link rel="canonical" href="https://popperish.com/escher" />
+    <meta name="theme-color" content="#0e0c0a" />
+    <link rel="icon" href="/favicon.svg" type="image/svg+xml" />
+    <link rel="apple-touch-icon" href="/apple-touch-icon.png" />
+    <meta property="og:type" content="website" />
+    <meta property="og:site_name" content="Popperish" />
+    <meta property="og:url" content="https://popperish.com/escher" />
+    <meta property="og:title" content="Get lost" />
+    <meta property="og:description" content="Walk at random on a curved heptagon paving and see if you ever find the fountain again. 1,000 walkers, live in your browser." />
+    <meta property="og:image" content="https://popperish.com/og-four-color.png" />
+    <meta property="og:image:width" content="1200" />
+    <meta property="og:image:height" content="630" />
+    <meta name="twitter:card" content="summary_large_image" />
+    <meta name="twitter:title" content="Get lost" />
+    <meta name="twitter:description" content="Walk at random on a curved heptagon paving and see if you ever find the fountain again. 1,000 walkers, live in your browser." />
+    <meta name="twitter:image" content="https://popperish.com/og-four-color.png" />
+    <link rel="preload" href="/fonts/inter-latin.woff2" as="font" type="font/woff2" crossorigin />
+    <link rel="preload" href="/fonts/archivo-black-latin.woff2" as="font" type="font/woff2" crossorigin />
+    <link rel="stylesheet" href="./style.css" />
+    <script type="module" src="./escher.ts"></script>
+  </head>
+  <body>
+    <header class="top wrap">
+      <a class="brand" href="/" aria-label="Popperish home">
+        <svg class="logo" viewBox="0 0 32 32" aria-hidden="true"><circle cx="16" cy="16" r="13.6" fill="none" stroke="#ffd23f" stroke-width="2.8" /><path d="M10 11.6h12M13.4 11.6v10M18.6 11.6v10" stroke="#ece9e2" stroke-width="3" stroke-linecap="round" /></svg>
+        <span>POPPERISH</span>
+      </a>
+      <nav class="links">
+        <a class="hide-sm" href="/#sims">Simulations</a>
+        <a class="hide-sm" href="https://discord.gg/TsszCGeJsP" target="_blank" rel="noreferrer">Discord</a>
+        <a class="btn" href="https://ko-fi.com/popperish" target="_blank" rel="noreferrer"><span class="hide-sm">Support Popperish</span><span class="show-sm">Support</span></a>
+        <a class="btn gold" id="watch-top" href="https://www.youtube.com/watch?v=Y9s7lhzff4w" target="_blank" rel="noreferrer">
+          <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M7 4.5v15l12-7.5z" /></svg>
+          <span class="hide-sm">Watch the video</span><span class="show-sm">Video</span>
+        </a>
+      </nav>
+    </header>
+
+    <main class="wrap npc escher">
+      <section class="hero">
+        <p class="kicker">Simulation · Get lost</p>
+        <h1>Get lost</h1>
+        <p class="intro">This floor is paved with seven-sided stones, three meeting at every corner. On a flat floor they would not fit, so this one curves like a saddle everywhere, and the further out you look the more stones there are. The disk below squeezes all of it into a circle: the stones are all the same size, they only look smaller toward the rim. Start at the fountain, walk at random, and see if you ever find it again.</p>
+      </section>
+
+      <!-- 1. one walker -->
+      <section class="test" aria-labelledby="t1-h">
+        <div class="test-head">
+          <p class="num">Part 1</p>
+          <h2 id="t1-h">Get lost</h2>
+          <p class="what">She starts on the stone with the fountain. Every step she crosses one of its seven edges, picked at random, and keeps going until she is home or too far out to ever come back.</p>
+        </div>
+        <div class="rig fit">
+          <div class="stage disk"><canvas id="walk-canvas" role="img" aria-label="The paving seen from above, with the fountain in the middle."></canvas><p class="hud" aria-hidden="true">STEP <b id="walk-hud">0</b></p></div>
+          <div class="panel">
+            <div class="buttons">
+              <button type="button" class="btn gold" id="walk-go">Get lost</button>
+              <button type="button" class="btn" id="walk-follow" aria-pressed="true">Follow her</button>
+            </div>
+            <div class="chips" role="group" aria-label="Walking speed">
+              <button type="button" class="chip" data-speed="0.7" aria-pressed="false">Stroll</button>
+              <button type="button" class="chip" data-speed="0.42" aria-pressed="true">Walk</button>
+              <button type="button" class="chip" data-speed="0.12" aria-pressed="false">Run</button>
+            </div>
+            <dl class="read">
+              <div><dt>Steps</dt><dd id="walk-steps">0</dd></div>
+              <div><dt>Stones from home</dt><dd id="walk-ring">0</dd></div>
+              <div><dt>Status</dt><dd id="walk-state">At the fountain</dd></div>
+            </dl>
+            <p class="note" id="walk-note" role="status">Press Get lost to send her off. With Follow her on, the view walks with her; switch it off to stay at the fountain and watch her shrink toward the rim.</p>
+          </div>
+        </div>
+      </section>
+
+      <!-- 2. a thousand -->
+      <section class="test" aria-labelledby="t2-h">
+        <div class="test-head">
+          <p class="num">Part 2</p>
+          <h2 id="t2-h">Lose 1,000 people</h2>
+          <p class="what">A thousand walkers leave the fountain on the paving, and a thousand more leave the middle of a flat square floor, with the same rule. Gold means home.</p>
+        </div>
+        <div class="rig fit">
+          <div class="stage pair"><canvas id="crowd-canvas" role="img" aria-label="A thousand walkers on the heptagon paving and a thousand on a flat floor."></canvas><p class="hud" aria-hidden="true">STEP <b id="crowd-hud">0</b></p></div>
+          <div class="panel">
+            <div class="buttons">
+              <button type="button" class="btn gold" id="crowd-go">Lose 1,000 people</button>
+            </div>
+            <dl class="read">
+              <div><dt>Paving: home</dt><dd id="crowd-home">0.0%</dd></div>
+              <div><dt>Paving: lost</dt><dd id="crowd-gone">0.0%</dd></div>
+              <div><dt>Flat floor: home</dt><dd id="crowd-flat">0.0%</dd></div>
+            </dl>
+            <p class="note" id="crowd-note" role="status">On the paving the walkers spread to the rim and fade; the ones who make it back turn gold and wait by the fountain. On the flat floor they keep coming back.</p>
+          </div>
+        </div>
+      </section>
+
+      <!-- 3. the rings -->
+      <section class="test" aria-labelledby="t3-h">
+        <div class="test-head">
+          <p class="num">Part 3</p>
+          <h2 id="t3-h">Why she cannot find her way back</h2>
+          <p class="what">Count the stones you can reach in exactly so many steps from the fountain. On a flat floor each ring holds four more stones than the last. On the paving each ring holds about two and a half times as many as the one before, so a walker is pulled outward far faster than chance can bring her back.</p>
+        </div>
+        <div class="rings-wrap">
+          <table class="rings">
+            <caption class="sr">Stones at each number of steps from home, on the paving and on a flat floor</caption>
+            <thead><tr><th scope="col">Steps from home</th><th scope="col">Heptagon paving</th><th scope="col">Flat floor</th></tr></thead>
+            <tbody id="rings-body"></tbody>
+          </table>
+          <p class="note">Within ten steps of the fountain there are 76,616 stones on the paving and 221 on a flat floor. Both counts come from our engine, and this page's port of it gets the same rings.</p>
+        </div>
+      </section>
+
+      <section class="facts">
+        <h2 class="label">What our engine found</h2>
+        <div class="fact-grid" id="facts"></div>
+      </section>
+
+      <section class="cta has-video" id="cta">
+        <div class="screen" id="cta-screen"></div>
+        <div>
+          <h2>The whole story is in the video</h2>
+          <p>Could you get lost forever in an Escher world? We walked a million people through one to find out.</p>
+          <div class="cta-buttons">
+            <a class="btn gold big" id="watch-cta" href="https://www.youtube.com/watch?v=Y9s7lhzff4w" target="_blank" rel="noreferrer">Watch on YouTube</a>
+            <a class="btn big" href="https://ko-fi.com/popperish" target="_blank" rel="noreferrer">Support Popperish on Ko-fi</a>
+            <a class="btn big" href="https://discord.gg/TsszCGeJsP" target="_blank" rel="noreferrer">Join the Discord</a>
+          </div>
+        </div>
+      </section>
+    </main>
+
+    <footer class="foot wrap">
+      <a class="brand small" href="/" aria-label="Popperish home">
+        <svg class="logo" viewBox="0 0 32 32" aria-hidden="true"><circle cx="16" cy="16" r="13.6" fill="none" stroke="#ffd23f" stroke-width="2.8" /><path d="M10 11.6h12M13.4 11.6v10M18.6 11.6v10" stroke="#ece9e2" stroke-width="3" stroke-linecap="round" /></svg>
+        <span>POPPERISH</span>
+      </a>
+      <p>&copy; 2026 Popperish · <a href="/privacy">Privacy and copyright</a> · <a href="https://www.youtube.com/channel/UCcpfG1Cvp9cmd9RlyjPU_mQ" target="_blank" rel="noreferrer">YouTube</a> · <a href="https://ko-fi.com/popperish" target="_blank" rel="noreferrer">Ko-fi</a> · <a href="https://discord.gg/TsszCGeJsP" target="_blank" rel="noreferrer">Discord</a></p>
+    </footer>
+  </body>
+</html>

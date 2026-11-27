@@ -1,10 +1,10 @@
 import {defineConfig} from 'vite';
 
-// Two static pages: / (the landing that lists the simulations) and /four-color (the map lab). site/ also holds the old
+// Static pages: / (the landing that lists the simulations), /four-color (the map lab) and /npc (Be the NPC) and /riemann (Hunt the zeros) and /escher (Get lost) and /fall (Trip Karl). site/ also holds the old
 // GitHub Pages files (index.html, terms, privacy, the TikTok callback), so the pages live in src/ and Vite builds from there.
 const page = (f: string) => new URL(`./src/${f}`, import.meta.url).pathname;
 export default defineConfig({
   root: 'src',
   publicDir: '../public',
-  build: {outDir: '../dist', emptyOutDir: true, rollupOptions: {input: {home: page('index.html'), fourColor: page('four-color.html'), privacy: page('privacy.html')}}},
+  build: {outDir: '../dist', emptyOutDir: true, rollupOptions: {input: {home: page('index.html'), fourColor: page('four-color.html'), npc: page('npc.html'), riemann: page('riemann.html'), escher: page('escher.html'), fall: page('fall.html'), privacy: page('privacy.html')}}},
 });

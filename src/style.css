@@ -1202,3 +1202,450 @@ input[type='range']::-moz-range-thumb {
   margin-top: 40px;
   font-size: 14px;
 }
+
+/* ---------------------------------------------------------------- Be the NPC (npc.html) */
+/* four tests, each a dark test room (the game world) beside its controls; cyan = the game's own numbers, gold = what we point at */
+.npc {
+  --cyan: #5cd6ff;
+}
+.test {
+  margin-top: 72px;
+}
+.test-head {
+  display: grid;
+  gap: 8px;
+  margin-bottom: 20px;
+}
+.test-head .num {
+  color: var(--gold);
+  font: 500 14px/1 var(--text);
+}
+.test-head h2 {
+  font: 400 clamp(24px, 2.4vw, 32px) / 1.1 var(--display);
+}
+.test-head .what {
+  max-width: 40rem;
+  color: var(--dim);
+  font-size: 16px;
+  text-wrap: pretty;
+}
+.rig {
+  display: grid;
+  grid-template-columns: minmax(0, 1fr) 360px;
+  gap: 24px 40px;
+  align-items: start;
+}
+.stage {
+  position: relative;
+  aspect-ratio: 16 / 9;
+  border-radius: 12px;
+  overflow: hidden;
+  background: #15120f;
+  border: 1px solid var(--line-2);
+  box-shadow: 0 24px 60px -24px rgba(0, 0, 0, 0.8);
+}
+.stage::before,
+.stage::after {
+  /* game-HUD corner brackets */
+  content: '';
+  position: absolute;
+  width: 18px;
+  height: 18px;
+  pointer-events: none;
+  border: 2px solid rgba(92, 214, 255, 0.55);
+}
+.stage::before {
+  top: 8px;
+  left: 8px;
+  border-right: 0;
+  border-bottom: 0;
+}
+.stage::after {
+  right: 8px;
+  bottom: 8px;
+  border-left: 0;
+  border-top: 0;
+}
+.stage canvas {
+  position: absolute;
+  inset: 0;
+  width: 100%;
+  height: 100%;
+  display: block;
+}
+.stage.swim {
+  display: flex;
+}
+.stage.swim canvas {
+  position: static;
+}
+.stage.swim canvas:first-child {
+  flex: none;
+  height: 100%;
+  aspect-ratio: 1;
+  width: auto;
+}
+.stage.swim canvas:last-child {
+  flex: 1;
+  min-width: 0;
+}
+.hud {
+  position: absolute;
+  top: 12px;
+  right: 16px;
+  color: var(--cyan);
+  font: 500 11px/1 var(--text);
+  letter-spacing: 0.16em;
+  pointer-events: none;
+}
+.hud b {
+  margin-left: 6px;
+  color: var(--chalk);
+  font: 400 18px/1 var(--display);
+  letter-spacing: 0.04em;
+  font-variant-numeric: tabular-nums;
+}
+.panel {
+  display: grid;
+  gap: 20px;
+}
+.ctl {
+  display: grid;
+  gap: 6px;
+}
+.ctl-top {
+  display: flex;
+  align-items: baseline;
+  justify-content: space-between;
+  gap: 12px;
+  font-size: 14px;
+}
+.ctl-top label {
+  color: var(--dim);
+  font-weight: 500;
+}
+.ctl-top output {
+  color: var(--chalk);
+  font: 400 20px/1 var(--display);
+  font-variant-numeric: tabular-nums;
+}
+.panel input[type='range'] {
+  width: 100%;
+}
+.panel .buttons {
+  display: flex;
+  flex-wrap: wrap;
+}
+.panel .buttons .btn {
+  flex: 1 1 auto;
+}
+.panel .chips {
+  flex-wrap: wrap;
+}
+.read {
+  display: grid;
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+  margin: 0;
+  border: 1px solid var(--line);
+  border-radius: 12px;
+  background: rgba(0, 0, 0, 0.25);
+}
+.read > div {
+  display: flex;
+  flex-direction: column-reverse;
+  justify-content: flex-end;
+  gap: 4px;
+  padding: 12px;
+}
+.read > div + div {
+  border-left: 1px solid var(--line);
+}
+.read dt {
+  color: var(--faint);
+  font-size: 12px;
+  line-height: 1.35;
+}
+.read dd {
+  margin: 0;
+  font: 400 20px/1.1 var(--display);
+  font-variant-numeric: tabular-nums;
+  overflow-wrap: anywhere;
+}
+.note {
+  min-height: 6.2em;
+  padding-left: 12px;
+  border-left: 2px solid var(--line-2);
+  font-size: 14px;
+  line-height: 1.55;
+  text-wrap: pretty;
+}
+@media (max-width: 1000px) {
+  .rig {
+    grid-template-columns: minmax(0, 1fr);
+  }
+  .note {
+    min-height: 0;
+  }
+}
+@media (max-width: 600px) {
+  .test {
+    margin-top: 56px;
+  }
+  .stage {
+    aspect-ratio: 4 / 3;
+  }
+  .stage.swim {
+    flex-direction: column;
+    aspect-ratio: auto;
+    height: 380px;
+  }
+  .stage.swim canvas:first-child {
+    height: 170px;
+    align-self: center;
+  }
+  .stage.swim canvas:last-child {
+    flex: none;
+    width: 100%;
+    height: 210px;
+  }
+  .read dd {
+    font-size: 17px;
+  }
+  .panel .chip {
+    flex: 1;
+    padding: 0 8px;
+  }
+}
+/* the second simulation card: a dark test room instead of the paper map */
+.sim + .sim {
+  margin-top: 72px;
+}
+.card.game {
+  background: #15120f;
+  border: 1px solid var(--line-2);
+}
+.card.game::after {
+  display: none;
+}
+@media (max-width: 600px) {
+  .sim + .sim {
+    margin-top: 48px;
+  }
+}
+
+/* wall and twins: the stage is as tall as its control column instead of a fixed 16:9, so no empty band */
+.rig.fit {
+  align-items: stretch;
+}
+.rig.fit .stage {
+  aspect-ratio: auto;
+  min-height: 300px;
+}
+@media (max-width: 1000px) {
+  .rig.fit .stage {
+    height: 300px;
+  }
+}
+@media (max-width: 600px) {
+  .rig.fit .stage {
+    aspect-ratio: auto;
+    height: 260px;
+    min-height: 0;
+  }
+}
+
+/* ---------------------------------------------------------------- Hunt the zeros (riemann.html): same rig as Be the NPC */
+.zeta .status {
+  margin-top: 16px;
+  max-width: 38rem;
+  padding-left: 12px;
+  border-left: 2px solid var(--gold);
+  color: var(--dim);
+  font-size: 15px;
+  line-height: 1.55;
+  text-wrap: pretty;
+}
+.zeta .status b {
+  color: var(--chalk);
+  font-weight: 600;
+}
+.zeta .stage canvas {
+  touch-action: pan-y;
+}
+#hunt-canvas {
+  cursor: grab;
+}
+#hunt-canvas:active {
+  cursor: grabbing;
+}
+#hunt-canvas:focus-visible {
+  outline: 2px solid var(--gold);
+  outline-offset: -2px;
+}
+.zeta .panel .chips {
+  flex-wrap: wrap;
+}
+.zeta .panel .chip {
+  flex: 1 1 auto;
+}
+.zeta .panel .chip {
+  padding: 0 8px;
+  font-size: 13px;
+}
+.zeta .panel .chips {
+  display: flex;
+  flex-wrap: wrap;
+}
+.zeta .panel .chip {
+  flex: 1 1 auto;
+  overflow: visible;
+}
+.zeta .read.mid {
+  grid-template-columns: minmax(0, 1fr) minmax(0, 1.5fr) minmax(0, 1fr);
+}
+.zeta .read.mid dd {
+  overflow-wrap: break-word;
+  font-size: 17px;
+}
+
+/* ---------------------------------------------------------------- Get lost (escher.html): same rig, sandstone corners instead of cyan */
+.escher {
+  --cyan: #e2b98a;
+}
+.escher .stage::before,
+.escher .stage::after {
+  border-color: rgba(226, 185, 138, 0.5);
+}
+.escher .stage.disk {
+  aspect-ratio: 16 / 11;
+  min-height: 0;
+}
+.escher .stage.pair {
+  min-height: 380px;
+}
+.escher .panel {
+  align-content: start;
+}
+.escher .panel .chips {
+  display: flex;
+}
+.escher .panel .chip {
+  flex: 1 1 auto;
+}
+.escher .read dd {
+  font-size: 18px;
+}
+.sr {
+  position: absolute;
+  width: 1px;
+  height: 1px;
+  overflow: hidden;
+  clip-path: inset(50%);
+  white-space: nowrap;
+}
+.rings-wrap {
+  display: grid;
+  grid-template-columns: minmax(0, 1fr) 360px;
+  gap: 24px 40px;
+  align-items: start;
+}
+.rings {
+  width: 100%;
+  border-collapse: collapse;
+  font-size: 14px;
+  font-variant-numeric: tabular-nums;
+}
+.rings th,
+.rings td {
+  padding: 7px 12px 7px 0;
+  border-bottom: 1px solid var(--line);
+  text-align: left;
+  font-weight: 400;
+}
+.rings thead th {
+  color: var(--faint);
+  font-size: 12px;
+}
+.rings tbody th {
+  width: 7rem;
+  color: var(--dim);
+}
+.rings td {
+  width: 45%;
+}
+.rings .bar {
+  display: block;
+  height: 6px;
+  margin-bottom: 5px;
+  width: var(--w);
+  border-radius: 3px;
+  background: var(--gold);
+}
+.rings .bar.flat {
+  background: var(--dim);
+}
+@media (max-width: 1000px) {
+  .rings-wrap {
+    grid-template-columns: minmax(0, 1fr);
+  }
+  .escher .stage.disk {
+    aspect-ratio: 4 / 3;
+  }
+  .escher .stage.pair {
+    height: 420px;
+  }
+}
+@media (max-width: 600px) {
+  .escher .stage.disk {
+    aspect-ratio: 1;
+    height: auto;
+  }
+  .escher .stage.pair {
+    height: 640px;
+  }
+  .rings tbody th {
+    width: 4.5rem;
+  }
+}
+
+/* ---------------------------------------------------------------- Trip Karl (fall.html): same rig, crash-test yellow corners */
+.fall {
+  --cyan: #f2c230;
+}
+.fall .stage::before,
+.fall .stage::after {
+  border-color: rgba(242, 194, 48, 0.5);
+}
+.fall .stage {
+  aspect-ratio: 16 / 10;
+}
+.fall .panel {
+  align-content: start;
+}
+.fall .read dd {
+  font-size: 17px;
+}
+.fall .rings tbody th {
+  width: 12rem;
+}
+.fall .rings td {
+  width: auto;
+}
+@media (max-width: 600px) {
+  .fall .stage {
+    aspect-ratio: 4 / 3;
+  }
+  .fall .read dd {
+    font-size: 15px;
+  }
+  .fall .rings {
+    font-size: 13px;
+  }
+  .fall .rings tbody th {
+    width: 6.5rem;
+  }
+  .fall .rings th,
+  .fall .rings td {
+    padding-right: 8px;
+  }
+}

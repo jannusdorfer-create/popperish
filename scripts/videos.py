@@ -11,7 +11,7 @@ from pathlib import Path
 SITE = Path(__file__).resolve().parent.parent
 MATH = SITE.parent / 'math'
 THUMBS, OUT = SITE / 'public' / 'thumbs', SITE / 'public' / 'data' / 'videos.json'
-SIMS = {'four-color': '/four-color'}  # episode slug -> its simulation page; add a line per new simulation
+SIMS = {'four-color': '/four-color', 'gta-npc': '/npc', 'riemann': '/riemann', 'escher-world': '/escher', 'body-fall': '/fall'}  # episode slug -> its simulation page; add a line per new simulation
 
 
 def cover(slug_dir: Path, pub: dict) -> Path | None:
