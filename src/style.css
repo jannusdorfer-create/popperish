@@ -1649,3 +1649,112 @@ input[type='range']::-moz-range-thumb {
     padding-right: 8px;
   }
 }
+
+/* ---------------------------------------------------------------- Grow a railway (slime.html): same rig, a dish of pale agar with egg-yolk veins */
+.slime {
+  --cyan: #ffc61a;
+}
+.slime .rig {
+  grid-template-columns: minmax(0, 620px) minmax(0, 480px);
+  align-items: start;
+}
+.slime .hero {
+  padding-bottom: 0;
+}
+.slime .test {
+  margin-top: 24px;
+}
+.slime .stage {
+  aspect-ratio: 17 / 19.456;
+  background: #efe4ca;
+  box-shadow: 0 24px 60px -24px rgba(0, 0, 0, 0.8), inset 0 0 0 1px rgba(60, 40, 10, 0.25);
+}
+.slime .stage::before,
+.slime .stage::after {
+  z-index: 2;
+  border-color: rgba(70, 48, 12, 0.55);
+}
+.slime .stage canvas#slime-ov {
+  z-index: 1;
+}
+.slime .stage[data-mode='free'] canvas#slime-ov {
+  cursor: crosshair;
+  touch-action: none;
+}
+.slime .hud {
+  z-index: 2;
+  top: 12px;
+  right: 14px;
+  padding: 7px 10px 6px;
+  border-radius: 8px;
+  background: rgba(21, 18, 15, 0.78);
+}
+.slime .panel {
+  align-content: start;
+}
+.slime .row2 {
+  display: grid;
+  grid-template-columns: minmax(0, 1fr) auto;
+  gap: 12px;
+}
+.slime .row2 .btn {
+  height: 42px;
+  padding: 0 20px;
+}
+.slime .seg button {
+  height: 34px;
+}
+.slime #rail-row[hidden] {
+  display: none;
+}
+.slime #rail {
+  display: inline-flex;
+  align-items: center;
+  gap: 10px;
+}
+.slime .swatch {
+  width: 18px;
+  height: 0;
+  border-top: 2px solid #e03a3a;
+  opacity: 0.55;
+}
+.slime #rail[aria-pressed='true'] .swatch {
+  opacity: 1;
+}
+.slime .read dd {
+  font-size: 17px;
+}
+.slime .note {
+  min-height: 7.8em;
+}
+.slime .facts-lead {
+  max-width: 44rem;
+  color: var(--dim);
+  text-wrap: pretty;
+}
+@media (max-width: 1000px) {
+  .slime .rig {
+    grid-template-columns: minmax(0, 1fr);
+  }
+  .slime .stage {
+    width: 100%;
+    max-width: 560px;
+    margin: 0 auto;
+  }
+  .slime .panel {
+    max-width: 560px;
+    width: 100%;
+    margin: 0 auto;
+  }
+  .slime .note {
+    min-height: 0;
+  }
+}
+@media (max-width: 600px) {
+  .slime .stage {
+    aspect-ratio: 17 / 19.456;
+  }
+  .slime .read dd {
+    font-size: 15px;
+  }
+}

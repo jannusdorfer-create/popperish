@@ -6,6 +6,7 @@ import {Staircase, Z, findZeros, gram, piK, primesUpTo, smoothCount, staircaseMi
 import {poisson, wigner} from './zeta-draw.ts';
 import {COSH_IN, Crowd, FACTS, FlatCrowd, GENS, STEP, boostTo, eye, fix, hdist, inv, locate, mul, paving, ringOf} from './escher-sim.ts';
 import {Run, lowest, poseGap, stopStep, tallyOrder, type Data as FallData} from './fall-sim.ts';
+import {GuideRun, MAZE_PATHS, MAZE_ROUTES, MAZE_SHORTEST, Tero, dropOat, fillRings, gridSize, landMask, lightMask, mazeNet, mazeWorld, paintLight, reachable, scatter, snapFree, tokyoWorld, type RunData, type SlimeData} from './slime-sim.ts';
 import {BALL_R, DT, GAP, STEP32, TUNNEL_KMH, WALK, WALL, crowd, dropTicks, dropTicksClosed, headline, medianCrowd, mulberry32, realFall, swimState, throwBall, throwMany, tunnelFrac, twinsFormula, ulp32, walkSpeed} from './npc-sim.ts';
 
 const data = (f: string) => JSON.parse(readFileSync(new URL(`../public/data/${f}.json`, import.meta.url), 'utf8'));
@@ -362,6 +363,86 @@ if (existsSync(factsEscher)) {
     );
     assert.ok(o.kit_choices.hill_twins.why.includes(`(${Ff.hill.twinsGap} m)`));
     console.log('fall: page numbers match sims/fall/facts.json and facts_outdoor.json');
+  }
+}
+
+// ------------------------------------------------------------------ Grow a railway (slime-sim.ts): the worlds the swarm lives in
+// public/data/slime/slime.json is written by scripts/slime_data.py; the swarm itself is GPU code, so the check covers what feeds it:
+// the map and mountain rasters, the oat flakes, the maze, and the tube rule that decides which maze routes stay.
+{
+  const SD = JSON.parse(readFileSync(new URL('../public/data/slime/slime.json', import.meta.url), 'utf8')) as SlimeData, Sf = SD.facts;
+  // even-odd fill: a 10 x 10 square with a 4 x 4 hole in it is 84 cells
+  const sq = (x: number, y: number, n: number) => [x, y, x + n, y, x + n, y + n, x, y + n];
+  const cut = fillRings([sq(2, 2, 10), sq(5, 5, 4)], 16, 16);
+  assert.equal(cut.reduce((a, b) => a + b, 0), 84, 'ring fill with a hole');
+  // the mountain mask decodes to the full raster and covers a sensible share
+  assert.equal(SD.mtn.rle.reduce((a, b) => a + b, 0), SD.mtn.w * SD.mtn.h, 'mountain runs add up to the raster');
+  const lit = lightMask(SD.mtn, SD.mtn.w, SD.mtn.h).reduce((a, b) => a + b, 0) / (SD.mtn.w * SD.mtn.h);
+  assert.ok(lit > 0.1 && lit < 0.3, `lit mountains cover ${lit.toFixed(2)} of the dish`);
+  // Tokyo mode: land minus lit mountains is open, sea is closed, every one of the 36 oats sits on open ground the slime can reach from Tokyo
+  const {w: TW, h: TH} = gridSize(SD.arena, 480), tw = tokyoWorld(SD, TW, TH), land = landMask(SD, TW, TH);
+  const open = tw.blocked.reduce((a, b) => a + (b ? 0 : 1), 0) / tw.blocked.length;
+  assert.ok(open > 0.4 && open < 0.65, `open ground is ${open.toFixed(2)} of the dish`);
+  assert.equal(tw.oats.length, Sf.cities, 'one oat flake per city');
+  assert.equal(tw.blocked[(TH - 2) * TW + TW - 2], 1, 'the far south-east corner is sea');
+  const reach = reachable(tw.blocked, TW, TH, tw.start);
+  tw.oats.forEach((o, i) => {
+    assert.equal(tw.blocked[Math.floor(o.y) * TW + Math.floor(o.x)], 0, `${tw.names[i]} oat is on off-limits ground`);
+    assert.equal(reach[Math.floor(o.y) * TW + Math.floor(o.x)], 1, `${tw.names[i]} cannot be reached from Tokyo`);
+  });
+  assert.equal(tw.names[0], 'Tokyo', 'oats are laid from Tokyo outward');
+  assert.ok(land[Math.floor(tw.start.y) * TW + Math.floor(tw.start.x)] === 1, 'Tokyo is on land');
+  const d2 = tw.oats.map((o) => Math.hypot(o.x - tw.start.x, o.y - tw.start.y));
+  assert.ok(d2.every((d, i) => i === 0 || d >= d2[i - 1]), 'oats are ordered by distance from Tokyo');
+  assert.equal(SD.rail.length, 57, 'the rail graph has 57 segments');
+  assert.ok(SD.rail.every((r) => r[0] >= SD.arena[0] && r[2] <= SD.arena[2] && r[1] >= SD.arena[1] && r[3] <= SD.arena[3]), 'rail inside the dish');
+  // free mode: oats drop on open cells only, light can be painted and kept off the oats' cells
+  const fb = new Uint8Array(40 * 40);
+  assert.ok(paintLight(fb, 40, 40, 20, 20, 5) && fb[20 * 40 + 20] === 1);
+  assert.equal(dropOat(fb, 40, 40, 20.5, 20.5), null, 'no oat on light');
+  assert.deepEqual(dropOat(fb, 40, 40, 2.5, 2.5), {x: 2.5, y: 2.5});
+  assert.ok(!paintLight(fb, 40, 40, 20, 20, 5), 'painting the same patch twice changes nothing');
+  const sn = snapFree(fb, 40, 40, 20.5, 20.5, 10)!;
+  assert.ok(fb[Math.floor(sn.y) * 40 + Math.floor(sn.x)] === 0 && Math.hypot(sn.x - 20.5, sn.y - 20.5) < 7, 'a free cell just outside the lit patch');
+  // the maze: oats at both ends, joined by corridors, four routes with the shortest first
+  const MW = 480, MH = 549, mz = mazeWorld(MW, MH), net = mazeNet(MW, MH), mr = reachable(mz.blocked, MW, MH, mz.oats[0]);
+  assert.equal(mr[Math.floor(mz.oats[1].y) * MW + Math.floor(mz.oats[1].x)], 1, 'the maze oats are connected');
+  const plen = (names: string[]) => names.reduce((a, n) => a + net.edges.filter((e) => e.tag === n).reduce((x, e) => x + e.len, 0), 0);
+  const lens = Object.fromEntries(Object.entries(MAZE_ROUTES).map(([k, v]) => [k, plen(v)]));
+  assert.equal(Object.keys(lens).length, Sf.maze.routes, 'four routes');
+  assert.equal(Object.entries(lens).sort((a, b) => a[1] - b[1])[0][0], MAZE_SHORTEST, 'alpha1+beta1 is the shortest route');
+  const ratio = Math.max(...Object.values(lens)) / lens[MAZE_SHORTEST];
+  assert.ok(Math.abs(ratio - Sf.maze.ratio) < 0.12, `longest route is ${ratio.toFixed(2)} times the shortest, facts say ${Sf.maze.ratio}`);
+  assert.ok(Object.keys(MAZE_PATHS).length === 13);
+  // the tube rule keeps the shortest route and thins every dead end and every other route, from 20 random starts like the facts
+  let steps = 0;
+  for (let seed = 0; seed < Sf.maze.seeds; seed++) {
+    const T = new Tero(net, 0.25, mulberry32(100 + seed));
+    for (let i = 0; i < 400; i++) T.step(0.1);
+    steps = 400;
+    const keep = new Set(MAZE_ROUTES[MAZE_SHORTEST]);
+    net.edges.forEach((e, i) => assert.ok(keep.has(e.tag) ? T.D[i] > 0.9 : T.D[i] < 0.01, `seed ${seed}: ${e.tag} ends at width ${T.D[i].toFixed(3)}`));
+  }
+  // the engine run the swarm follows: widths play back from a full mesh to a network that touches every city, and thin out on the way
+  const RD = JSON.parse(readFileSync(new URL('../public/data/slime/tokyo-run.json', import.meta.url), 'utf8')) as RunData, gr = new GuideRun(RD);
+  const alive = (u: number) => gr.at(u).reduce((a, w) => a + (w > 0.002 ? 1 : 0), 0);
+  assert.ok(alive(0) > 1000 && alive(1) > 300 && alive(1) < 450 && alive(0.5) < alive(0) && alive(1) <= alive(0.5), `run edges alive: ${alive(0)}, ${alive(0.5)}, ${alive(1)}`);
+  assert.equal(RD.cities.length, Sf.cities, 'every city is a node of the run');
+  const last = gr.at(1), touched = new Set<number>();
+  last.forEach((w, i) => w > 0.002 && (touched.add(RD.edges[2 * i]), touched.add(RD.edges[2 * i + 1])));
+  assert.ok(RD.cities.every((c) => touched.has(c)), 'the final network touches every city');
+  const sc = scatter(mz.blocked, MW, 500, mulberry32(3));
+  assert.ok(sc.every((p) => !mz.blocked[Math.floor(p.y) * MW + Math.floor(p.x)]), 'maze agents start in corridors');
+  console.log(`slime: ${tw.oats.length} oats all reachable, open ground ${(open * 100).toFixed(0)}%, maze ${Sf.maze.seeds} of ${Sf.maze.seeds} starts keep the shortest route in ${steps} steps`);
+  const factsFile = new URL('../../sims/slime/facts.json', import.meta.url);
+  if (existsSync(factsFile)) {
+    const f = JSON.parse(readFileSync(factsFile, 'utf8')), b = f.beat_rail, m = f.maze;
+    assert.deepEqual(
+      [Sf.runs, Sf.connected, Sf.cities, Sf.dishCm, Sf.hours, Sf.slime, Sf.rail, Sf.mst, Sf.beat, Sf.maze],
+      [f.runs.n, f.runs.connected, f.rail.cities, f.literature.arena_width_cm, f.literature.experiment_hours, {cost: f.slime.TL_MST.median, ft: f.slime.FT.median}, {cost: f.rail.TL_MST, ft: f.rail.FT, km: f.rail.TL_km}, {km: f.mst.TL_km}, {cost: b.count.TL_MST, trips: b.count.MD_MST, ft: b.count.FT, all: b.count.all, alpha: b.alpha_better}, {seeds: m.tero_seeds, won: m.shortest_won, routes: Object.keys(m.route_length_px).length, ratio: m.longest_over_shortest}],
+      'slime.json facts differ from sims/slime/facts.json',
+    );
+    console.log('slime: page numbers match sims/slime/facts.json');
   }
 }
 

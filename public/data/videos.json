@@ -1,5 +1,14 @@
 [
  {
+  "id": "PSPw22_F4lo",
+  "slug": "slime-tokyo",
+  "title": "Can A Brainless Blob Design A Better Railway?",
+  "date": "2026-11-28T13:30:00Z",
+  "thumb": "/thumbs/slime-tokyo.webp",
+  "blurb": "In the slime mold Tokyo railway experiment, a single cell with no brain grows a network shaped like the region's real rail lines.",
+  "sim": "/slime"
+ },
+ {
   "id": "YZlJeBRYsG4",
   "slug": "body-fall",
   "title": "Can You Predict How A Body Falls?",
